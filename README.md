@@ -28,28 +28,38 @@ npm run new-post -- my-slug "文章標題"
 
 會建立 `src/content/articles/my-slug.md`，填好 frontmatter 後直接寫 Markdown。
 
-Frontmatter 欄位：、（直接給答案的一兩句，AI 摘要常抽這裡）、（預設 傅煦媛）、、（自動）、（證據等級：細胞實驗 / 動物實驗 / 人體試驗 / 個案軼事 / 推測假說）、、（GMI 之外的主題 entity）、（重點摘要 3–5 句）、、、（可選）、。
+Frontmatter 欄位：`title`、`description`（直接給答案的一兩句，AI 摘要常抽這裡）、`author`（預設 傅煦媛）、`pubDate`、`updatedDate`（自動）、`evidence`（證據等級：細胞實驗 / 動物實驗 / 人體試驗 / 個案軼事 / 推測假說）、`tags`、`about`（GMI 之外的主題 entity）、`takeaways`（重點摘要 3–5 句）、`references`、`faq`、`heroImage`（可選）、`draft`。
 
 ### 引用文獻
 
-1. 在 frontmatter 的  列出來源，只要  加一個識別碼：
-   \2. 內文寫  或 ，建置時變成上標 [1]、[1,2]，連到文末「參考文獻」。編號依內文第一次出現的順序。
-3. 執行 ：向 Crossref 抓標題、作者、期刊、卷期頁，向 NCBI 抓 PMID／PMCID，存進 （記得 commit）。已快取的不會重抓；> hsuyuan-fu@0.1.0 refs
-> node scripts/fetch-refs.mjs --force
-DOI 共 41 筆，需抓取 0 筆
-完成：0/0 筆，快取共 41 筆 → src/data/refs-cache.json 全部重抓。
+1. 在 frontmatter 的 `references` 列出來源，只要 `key` 加一個識別碼：
+   ```yaml
+   references:
+     - key: teo2020
+       gmi: JRN-0024                # GMI 文獻／專利：用 gmi.json 的 id
+     - key: wilding2021
+       doi: 10.1056/NEJMoa2032183   # 其他文獻：用 DOI
+       note: STEP 1 試驗            # 可選補充
+     - key: fda-label
+       url: https://...             # 非期刊來源：url + title + publisher + year
+       title: Wegovy prescribing information
+       publisher: U.S. FDA
+       year: 2024
+   ```
+2. 內文寫 `[@teo2020]` 或 `[@teo2020; @wilding2021]`，建置時變成上標 [1]、[1,2]，連到文末「參考文獻」。編號依內文第一次出現的順序。
+3. 執行 `npm run refs`：向 Crossref 抓標題、作者、期刊、卷期頁，向 NCBI 抓 PMID／PMCID，存進 `src/data/refs-cache.json`（記得 commit）。已快取的不會重抓；`npm run refs -- --force` 全部重抓。
 4. 文末清單每筆附 DOI、PubMed、全文（PMC）連結；GMI 文獻另附站內資料頁連結。書目缺漏時畫面會標「書目待補」。
 
 ### SEO／AI 結構化資料
 
-每頁自動輸出 schema.org JSON-LD（）：
-- 全站共用三個固定節點：、（傅煦媛，含 ORCID、Google Scholar、學歷、認證）、（GMI，含 Wikidata、UniProt、PDB、GenBank、INCI）。
-- 文章： + →Person、→GMI、→每筆 （DOI）、（有 faq 時）、。
-- GMI 資料頁：， 為 41 篇  與專利節點。
-- 關於我：，→Person。
-- 另有 、（給 AI 爬蟲的網站說明，建置時自動列出所有文章與主題頁）。
+每頁自動輸出 schema.org JSON-LD（`src/lib/schema.ts`）：
+- 全站共用三個固定節點：`WebSite`、`Person`（傅煦媛，含 ORCID、Google Scholar、學歷、認證）、`Protein`（GMI，含 Wikidata、UniProt、PDB、GenBank、INCI）。
+- 文章：`BlogPosting` + `author`→Person、`about`→GMI、`citation`→每筆 `ScholarlyArticle`（DOI）、`FAQPage`（有 faq 時）、`BreadcrumbList`。
+- GMI 資料頁：`CollectionPage`，`hasPart` 為 41 篇 `ScholarlyArticle` 與專利節點。
+- 關於我：`ProfilePage`，`mainEntity`→Person。
+- 另有 `/rss.xml`、`/llms.txt`（給 AI 爬蟲的網站說明，建置時自動列出所有文章與主題頁）。
 
-改人物或 GMI 的資料（新增身分連結、識別碼）只需改 。
+改人物或 GMI 的資料（新增身分連結、識別碼）只需改 `src/data/entities.ts`。
 
 ## 日期自動更新
 
