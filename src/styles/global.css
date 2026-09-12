@@ -4,10 +4,12 @@
 	--text: #2b2622;
 	--muted: #6d635b;
 	--line: #e6ded3;
-	--accent: #8b3a2f;
-	--accent-soft: #f3e4df;
-	--tag: #eef2ea;
-	--tag-text: #3f5a3a;
+	/* 主色：#767593（與 favicon 一致）；文字連結用稍深的 --link 以符合對比度 */
+	--accent: #767593;
+	--accent-soft: #ebeaf2;
+	--link: #5f5e7d;
+	--tag: #f0ede8;
+	--tag-text: #5f5a55;
 	--max: 760px;
 	--font: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -33,7 +35,7 @@ body {
 }
 
 a {
-	color: var(--accent);
+	color: var(--link);
 	text-underline-offset: 3px;
 }
 
@@ -174,7 +176,8 @@ h3 {
 	transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 .card:hover {
-	box-shadow: 0 6px 20px rgba(60, 40, 30, 0.08);
+	border-color: #c9c8d8;
+	box-shadow: 0 6px 20px rgba(80, 78, 110, 0.1);
 	transform: translateY(-1px);
 }
 .card h2,
@@ -189,7 +192,7 @@ h3 {
 }
 .card h2 a:hover,
 .card h3 a:hover {
-	color: var(--accent);
+	color: var(--link);
 }
 .card p {
 	margin: 0 0 0.6rem;
@@ -231,7 +234,7 @@ h3 {
 }
 .tag.evidence {
 	background: var(--accent-soft);
-	color: var(--accent);
+	color: var(--link);
 }
 
 /* Article */
