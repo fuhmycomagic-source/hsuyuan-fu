@@ -1,9 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
+import Timeline from '../components/Timeline.astro';
 import { DISCLOSURE, SITE_NAME, SITE_NAME_EN } from '../consts';
+import {
+	CERTIFICATIONS,
+	GMI_MILESTONES,
+	PATENTS,
+	SELECTED_PUBLICATIONS,
+	STATS,
+	TEACHING,
+	TIMELINE,
+} from '../data/career';
+
+const certs = [...CERTIFICATIONS].sort((a, b) => b.year - a.year);
 ---
 
-<Base title="關於我 / About" description="傅煦媛（Hsu-Yuan Fu）：從博士研究到 GMI 研發，以及為什麼寫這個網站。">
+<Base
+	title="關於我 / About"
+	description="傅煦媛（Hsu-Yuan Fu）：生化科技博士，十餘年把 GMI（小孢子靈芝免疫調節蛋白）從學術研發帶到食品、化粧品與藥品法規登錄的產業化歷程。"
+>
 	<h1>關於我 <span class="muted small">/ About</span></h1>
 
 	<h2>{SITE_NAME}</h2>
@@ -16,12 +31,225 @@ import { DISCLOSURE, SITE_NAME, SITE_NAME_EN } from '../consts';
 		Researcher working on GMI (<i>Ganoderma microsporum</i> immunomodulatory protein) R&amp;D. After a PhD and postdoctoral research abroad, I returned to Taiwan, where my career has crossed several professional fields over the past decade and more. This site is where I translate the science I read at work into personal notes on health and research topics.
 	</p>
 
+	<!-- 一眼看懂 -->
+	<ul class="stats" aria-label="重點數字">
+		{
+			STATS.map((s) => (
+				<li>
+					<span class="stat-n">{s.n}</span>
+					<span class="stat-zh">{s.zh}</span>
+					<span class="stat-en muted">{s.en}</span>
+				</li>
+			))
+		}
+	</ul>
+
+	<h2>GMI：從學術研發到產業化 <span class="muted small">/ From bench to registered ingredient</span></h2>
+	<p class="muted small">
+		GMI 是以 <i>Pichia pastoris</i> 生產的重組真菌免疫調節蛋白。這些里程碑都是公開登錄或已發表的資料，也是我這十年工作的主軸。<br />
+		GMI is a recombinant fungal immunomodulatory protein expressed in <i>Pichia pastoris</i>. Every milestone below is on the public record.
+	</p>
+	<ol class="milestones">
+		{
+			GMI_MILESTONES.map((m) => (
+				<li>
+					<span class="ms-label">{m.label.zh} <span class="muted">{m.label.en}</span></span>
+					<div>
+						<strong>{m.title.zh}</strong>
+						<div class="muted small">{m.title.en}</div>
+						<p>{m.detail.zh}</p>
+						<p class="muted small">{m.detail.en}</p>
+					</div>
+				</li>
+			))
+		}
+	</ol>
+
 	<h2>經歷 <span class="muted small">/ Timeline</span></h2>
-	<p class="muted">學術與職涯雙軌時間軸整理中。<br />A dual-track (academic / career) timeline is in preparation.</p>
+	<p class="muted small">
+		學術與研究、產業與法規兩條軌道共用同一條時間軸（寬螢幕時分列左右）。每一站都可展開英文。<br />
+		Academic and industry tracks on one shared axis (side by side on wide screens). Expand each entry for English.
+	</p>
+	<Timeline entries={TIMELINE} />
+
+	<h2>專業認證 <span class="muted small">/ Certifications</span></h2>
+	<ul class="certs">
+		{
+			certs.map((c) => (
+				<li>
+					<span class="cert-year">{c.year}</span>
+					<span>
+						{c.zh}
+						<span class="muted small"> · {c.en}</span>
+					</span>
+				</li>
+			))
+		}
+	</ul>
+
+	<h2>專利 <span class="muted small">/ Patents</span></h2>
+	<ol class="patents">
+		{
+			PATENTS.map((p) => (
+				<li class:list={{ gmi: p.gmi }}>
+					<strong>{p.title.zh}</strong>
+					{p.gmi && <span class="tag evidence">GMI</span>}
+					<div class="muted small">{p.title.en}</div>
+					<div class="small">
+						{p.inventors} — {p.status.zh}
+						<span class="muted"> · {p.status.en}</span>
+					</div>
+				</li>
+			))
+		}
+	</ol>
+
+	<h2>論文與教學 <span class="muted small">/ Publications &amp; Teaching</span></h2>
+	<details class="pubs">
+		<summary>精選論文（共 22 篇同儕審查論文；* 為共同第一作者） · Selected publications</summary>
+		<ol>
+			{SELECTED_PUBLICATIONS.map((p) => <li set:html={p} />)}
+		</ol>
+	</details>
+	<ul class="teaching">
+		{
+			TEACHING.map((t) => (
+				<li>
+					{t.zh}
+					<span class="muted small"> · {t.en}</span>
+				</li>
+			))
+		}
+	</ul>
 
 	<aside class="notice">
 		<strong>利益揭露 / Disclosure</strong><br />
 		{DISCLOSURE}<br />
-		<span class="muted">I work in GMI ingredient R&amp;D. Everything here is my personal view and scientific summary, not my employer's position, not advertising, and not medical advice.</span>
+		<span class="muted"
+			>I work in GMI ingredient R&amp;D. Everything here is my personal view and scientific summary, not my employer's position, not advertising, and not medical advice.</span
+		>
 	</aside>
 </Base>
+
+<style>
+	.stats {
+		list-style: none;
+		margin: 1.75rem 0 0.5rem;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+		gap: 0.75rem;
+	}
+	.stats li {
+		background: var(--bg-card);
+		border: 1px solid var(--line);
+		border-radius: 12px;
+		padding: 0.85rem 0.9rem;
+		display: flex;
+		flex-direction: column;
+		line-height: 1.4;
+	}
+	.stat-n {
+		font-size: 1.6rem;
+		font-weight: 700;
+		color: var(--accent);
+		letter-spacing: 0.01em;
+	}
+	.stat-zh {
+		font-size: 0.88rem;
+		margin-top: 0.15rem;
+	}
+	.stat-en {
+		font-size: 0.75rem;
+	}
+
+	.milestones {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.75rem;
+	}
+	.milestones li {
+		display: grid;
+		grid-template-columns: 5.5rem 1fr;
+		gap: 0.75rem;
+		background: var(--bg-card);
+		border: 1px solid var(--line);
+		border-left: 4px solid var(--accent);
+		border-radius: 10px;
+		padding: 0.85rem 1rem;
+		font-size: 0.95rem;
+	}
+	.milestones .ms-label {
+		font-weight: 700;
+		color: var(--link);
+		line-height: 1.4;
+	}
+	.milestones .ms-label .muted {
+		display: block;
+		font-weight: 400;
+		font-size: 0.75rem;
+	}
+	.milestones p {
+		margin: 0.35rem 0 0;
+	}
+	@media (max-width: 480px) {
+		.milestones li {
+			grid-template-columns: 1fr;
+			gap: 0.25rem;
+		}
+	}
+
+	.certs {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.4rem;
+		font-size: 0.95rem;
+	}
+	.certs li {
+		display: grid;
+		grid-template-columns: 3.5rem 1fr;
+		gap: 0.5rem;
+		align-items: baseline;
+	}
+	.cert-year {
+		font-variant-numeric: tabular-nums;
+		color: var(--muted);
+		font-size: 0.85rem;
+	}
+
+	.patents {
+		margin: 0;
+		padding-left: 1.25rem;
+		display: grid;
+		gap: 0.75rem;
+		font-size: 0.95rem;
+	}
+	.patents .tag {
+		margin-left: 0.4rem;
+		vertical-align: 0.1em;
+	}
+
+	.pubs summary {
+		cursor: pointer;
+		color: var(--link);
+		font-size: 0.95rem;
+	}
+	.pubs ol {
+		margin: 0.5rem 0 0;
+		padding-left: 1.25rem;
+		font-size: 0.88rem;
+		color: var(--muted);
+	}
+	.pubs li + li {
+		margin-top: 0.35rem;
+	}
+	.teaching {
+		margin: 1rem 0 0;
+		padding-left: 1.25rem;
+		font-size: 0.95rem;
+	}
+</style>

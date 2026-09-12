@@ -1,0 +1,217 @@
+---
+// 雙軌時間軸：桌機版左欄「學術／研究」、右欄「產業／法規」共用一條時間軸；
+// 手機版收成單欄，以色點區分軌道。
+import type { TimelineEntry } from '../data/career';
+
+interface Props {
+	entries: TimelineEntry[];
+}
+const { entries } = Astro.props;
+const sorted = [...entries].sort((a, b) => b.sortYear - a.sortYear);
+---
+
+<div class="tl-legend" aria-hidden="true">
+	<span class="tl-key academic">學術／研究 <span class="muted">Academic</span></span>
+	<span class="tl-key industry">產業／法規 <span class="muted">Industry</span></span>
+	<span class="tl-key gmi">GMI 相關 <span class="muted">GMI-related</span></span>
+</div>
+
+<ol class="timeline">
+	{
+		sorted.map((e) => (
+			<li class:list={['tl-item', e.track, { gmi: e.gmi }]}>
+				<div class="tl-dot" aria-hidden="true" />
+				<article class="tl-card">
+					<div class="tl-years">
+						{e.years}
+						{e.yearsEn && <span class="muted"> · {e.yearsEn}</span>}
+					</div>
+					<h3 class="tl-role">{e.role.zh}</h3>
+					<div class="tl-org">{e.org.zh}</div>
+					<p class="tl-summary">{e.summary.zh}</p>
+					{e.points && (
+						<ul class="tl-points">
+							{e.points.map((p) => (
+								<li>{p.zh}</li>
+							))}
+						</ul>
+					)}
+					<details class="tl-en">
+						<summary>English</summary>
+						<div class="tl-en-body muted">
+							<div>
+								<strong>{e.role.en}</strong> — {e.org.en}
+							</div>
+							<p>{e.summary.en}</p>
+							{e.points && (
+								<ul>
+									{e.points.map((p) => (
+										<li>{p.en}</li>
+									))}
+								</ul>
+							)}
+						</div>
+					</details>
+				</article>
+			</li>
+		))
+	}
+</ol>
+
+<style>
+	.tl-legend,
+	.timeline {
+		--c-academic: #a89478;
+		--c-industry: var(--accent);
+	}
+	.tl-legend {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 1.25rem;
+		margin: 0 0 1.25rem;
+		font-size: 0.85rem;
+	}
+	.tl-key::before {
+		content: '';
+		display: inline-block;
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 50%;
+		margin-right: 0.4rem;
+		vertical-align: -0.05em;
+		background: var(--c-academic);
+	}
+	.tl-key.industry::before {
+		background: var(--c-industry);
+	}
+	.tl-key.gmi::before {
+		background: var(--c-industry);
+		box-shadow: 0 0 0 3px var(--accent-soft), 0 0 0 4px var(--accent);
+	}
+
+	.timeline {
+		--axis: 2px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+	.timeline::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0.55rem;
+		width: var(--axis);
+		background: var(--line);
+	}
+	.tl-item {
+		position: relative;
+		padding: 0 0 1.5rem 2rem;
+	}
+	.tl-dot {
+		position: absolute;
+		left: 0;
+		top: 0.55rem;
+		width: 1.1rem;
+		height: 1.1rem;
+		border-radius: 50%;
+		background: var(--c-academic);
+		border: 3px solid var(--bg);
+		box-shadow: 0 0 0 1px var(--line);
+	}
+	.tl-item.industry .tl-dot {
+		background: var(--c-industry);
+	}
+	.tl-item.gmi .tl-dot {
+		box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+	}
+
+	.tl-card {
+		background: var(--bg-card);
+		border: 1px solid var(--line);
+		border-radius: 12px;
+		padding: 1rem 1.15rem;
+	}
+	.tl-item.gmi .tl-card {
+		border-color: #c9c8d8;
+		box-shadow: 0 4px 16px rgba(80, 78, 110, 0.08);
+	}
+	.tl-years {
+		font-size: 0.82rem;
+		color: var(--muted);
+		letter-spacing: 0.03em;
+	}
+	.tl-role {
+		margin: 0.15rem 0 0;
+		font-size: 1.08rem;
+		line-height: 1.45;
+	}
+	.tl-org {
+		font-size: 0.92rem;
+		color: var(--muted);
+		margin-bottom: 0.5rem;
+	}
+	.tl-summary {
+		margin: 0 0 0.5rem;
+		font-size: 0.95rem;
+	}
+	.tl-points {
+		margin: 0;
+		padding-left: 1.2rem;
+		font-size: 0.9rem;
+		color: var(--muted);
+	}
+	.tl-points li + li {
+		margin-top: 0.25rem;
+	}
+	.tl-en {
+		margin-top: 0.6rem;
+		font-size: 0.85rem;
+	}
+	.tl-en summary {
+		cursor: pointer;
+		color: var(--link);
+		user-select: none;
+	}
+	.tl-en-body {
+		margin-top: 0.4rem;
+		line-height: 1.65;
+	}
+	.tl-en-body p {
+		margin: 0.35rem 0;
+	}
+	.tl-en-body ul {
+		margin: 0;
+		padding-left: 1.2rem;
+	}
+
+	/* 桌機：雙欄，共用中軸 */
+	@media (min-width: 720px) {
+		.timeline::before {
+			left: 50%;
+			margin-left: calc(var(--axis) / -2);
+		}
+		.tl-item {
+			width: 50%;
+			padding: 0 2rem 1.5rem 0;
+		}
+		.tl-item.industry {
+			margin-left: 50%;
+			padding: 0 0 1.5rem 2rem;
+		}
+		.tl-item .tl-dot {
+			left: auto;
+			right: -0.55rem;
+		}
+		.tl-item.industry .tl-dot {
+			right: auto;
+			left: -0.55rem;
+		}
+		/* 拉近兩欄的垂直距離，讓時間軸看起來連續 */
+		.tl-item.academic + .tl-item.industry,
+		.tl-item.industry + .tl-item.academic {
+			margin-top: -1rem;
+		}
+	}
+</style>
