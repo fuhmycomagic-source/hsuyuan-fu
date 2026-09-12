@@ -1,0 +1,43 @@
+---
+import { displayTags, firstAuthor, mechanismTags, tagZh, type Journal } from '../lib/gmi';
+interface Props {
+	j: Journal;
+}
+const { j } = Astro.props;
+const tags = displayTags(j.tags);
+const mech = mechanismTags(j.tags);
+const pubmed = j.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${j.pmid}/` : '';
+---
+
+<li class="ref" id={j.id}>
+	<div class="ref-head">
+		<span class="ref-type">文獻</span>
+		<span class="ref-year">{j.year}</span>
+		{j.evidence && <span class="tag evidence">{j.evidence}</span>}
+	</div>
+	<h3 class="ref-title"><a href={j.sourceUrl} rel="noopener" target="_blank">{j.title}</a></h3>
+	<p class="ref-meta">
+		{firstAuthor(j)}{firstAuthor(j) && '．'}<i>{j.journal}</i>
+		{j.model && <span>．{j.model}</span>}
+	</p>
+	{j.summaryZh && <p class="ref-summary">{j.summaryZh}</p>}
+	{tags.length > 0 && (
+		<ul class="tags">
+			{tags.map((t) => <li class="tag" title={t}>{tagZh(t)}</li>)}
+		</ul>
+	)}
+	{mech.length > 0 && (
+		<details class="ref-mech">
+			<summary>機轉標籤（{mech.length}）</summary>
+			<ul class="tags">
+				{mech.map((t) => <li class="tag mech">{t}</li>)}
+			</ul>
+		</details>
+	)}
+	<p class="ref-links">
+		<a href={j.sourceUrl} rel="noopener" target="_blank">原文{j.doi ? '（DOI）' : ''}</a>
+		{pubmed && <a href={pubmed} rel="noopener" target="_blank">PubMed</a>}
+		{j.gmibioUrl && <a href={j.gmibioUrl} rel="noopener" target="_blank">GMIBIO</a>}
+		{j.newsUrl && <a href={j.newsUrl} rel="noopener" target="_blank">新聞</a>}
+	</p>
+</li>

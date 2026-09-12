@@ -34,6 +34,22 @@ Frontmatter 欄位：`title`、`description`、`author`（預設 傅煦媛）、
 
 首頁與文章列表依「最後更新日期」排序，最新在前，並顯示發布／更新日期。
 
+## GMI 研究資料（/gmi/）
+
+資料主檔是 `GMIBIO_Knowledge_Master.xlsx`（同時供 LINE bot 使用，不放進版本庫）。更新流程：
+
+```bash
+npm run import-gmi -- "D:\Download\GMIBIO_Knowledge_Master.xlsx"
+```
+
+腳本會輸出 `src/data/gmi.json`（只含公開欄位），規則：
+- 只收 `public_status=Public`、`record_status=Active`、`line_visibility=Show`
+- 專利只收 `Granted`，依 `family_id` 合併為專利家族
+- 文獻補上 `Legacy_Journals` 的作者、DOI、PMID
+
+主題分類定義在 `src/data/gmi-topics.ts`；每筆依 `primary_tag`（其次 `tags`）歸入第一個符合的主題。
+頁面：`/gmi/`（主題入口 + 篩選總表）、`/gmi/<topic>/`（主題頁：文獻卡 + 專利家族卡）。
+
 ## 部署
 
 推送到 GitHub `main` 分支後，Cloudflare Pages 會自動建置與部署。

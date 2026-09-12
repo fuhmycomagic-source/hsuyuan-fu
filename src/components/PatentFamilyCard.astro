@@ -1,0 +1,44 @@
+---
+import { displayTags, JURISDICTION_ZH, tagZh, type PatentFamily } from '../lib/gmi';
+interface Props {
+	p: PatentFamily;
+}
+const { p } = Astro.props;
+const tags = displayTags(p.tags);
+const years = p.yearFrom === p.yearTo ? `${p.yearTo ?? ''}` : `${p.yearFrom}–${p.yearTo}`;
+---
+
+<li class="ref" id={p.id}>
+	<div class="ref-head">
+		<span class="ref-type patent">專利</span>
+		<span class="ref-year">{years}</span>
+		<span class="muted small">{p.members.length} 件核准</span>
+	</div>
+	<h3 class="ref-title">{p.titleZh}</h3>
+	{p.titleEn && p.titleEn !== p.titleZh && <p class="ref-meta">{p.titleEn}</p>}
+	{p.summaryZh && <p class="ref-summary">{p.summaryZh}</p>}
+	<ul class="members">
+		{p.members.map((m) => (
+			<li>
+				<span class="juris" title={JURISDICTION_ZH[m.jurisdiction] ?? m.jurisdiction}>{m.jurisdiction}</span>
+				<a href={m.sourceUrl} rel="noopener" target="_blank">{m.patentNo}</a>
+				{m.year && <span class="muted small">（{m.year}）</span>}
+				{m.gmibioUrl && (
+					<a class="small" href={m.gmibioUrl} rel="noopener" target="_blank">
+						GMIBIO
+					</a>
+				)}
+				{m.newsUrl && (
+					<a class="small" href={m.newsUrl} rel="noopener" target="_blank">
+						新聞
+					</a>
+				)}
+			</li>
+		))}
+	</ul>
+	{tags.length > 0 && (
+		<ul class="tags">
+			{tags.map((t) => <li class="tag" title={t}>{tagZh(t)}</li>)}
+		</ul>
+	)}
+</li>

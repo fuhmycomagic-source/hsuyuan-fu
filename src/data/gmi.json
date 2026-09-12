@@ -1,0 +1,2627 @@
+{
+	"generatedAt": "2026-09-12",
+	"source": "GMIBIO_Knowledge_Master.xlsx",
+	"counts": {
+		"journals": 41,
+		"patentFamilies": 16,
+		"patents": 26
+	},
+	"tags": [
+		{
+			"id": "TAG-001",
+			"type": "Disease",
+			"tag": "lung cancer",
+			"zh": "肺癌",
+			"aliases": [
+				"肺癌",
+				"lung cancer",
+				"lung carcinoma",
+				"Lung Neoplasms",
+				"NSCLC",
+				"non-small cell lung cancer",
+				"lung adenocarcinoma",
+				"Adenocarcinoma of Lung"
+			]
+		},
+		{
+			"id": "TAG-002",
+			"type": "Disease",
+			"tag": "breast cancer",
+			"zh": "乳癌",
+			"aliases": [
+				"乳癌",
+				"乳腺癌",
+				"breast cancer"
+			]
+		},
+		{
+			"id": "TAG-003",
+			"type": "Disease",
+			"tag": "head and neck cancer",
+			"zh": "頭頸癌",
+			"aliases": [
+				"頭頸癌",
+				"頭頸部癌",
+				"HNSCC",
+				"head and neck cancer",
+				"head and neck squamous cell carcinoma",
+				"口腔癌",
+				"oral cancer",
+				"oral carcinoma",
+				"oral squamous cell carcinoma",
+				"OSCC"
+			]
+		},
+		{
+			"id": "TAG-004",
+			"type": "Disease",
+			"tag": "bladder cancer",
+			"zh": "膀胱癌",
+			"aliases": [
+				"膀胱癌",
+				"bladder cancer"
+			]
+		},
+		{
+			"id": "TAG-005",
+			"type": "Disease",
+			"tag": "brain cancer",
+			"zh": "腦癌",
+			"aliases": [
+				"腦癌",
+				"brain cancer",
+				"brain tumor",
+				"brain neoplasm",
+				"glioblastoma",
+				"glioblastoma multiforme",
+				"GBM"
+			]
+		},
+		{
+			"id": "TAG-006",
+			"type": "Disease",
+			"tag": "liver cancer",
+			"zh": "肝癌",
+			"aliases": [
+				"肝癌",
+				"liver cancer",
+				"hepatocellular carcinoma",
+				"HCC"
+			]
+		},
+		{
+			"id": "TAG-007",
+			"type": "Disease",
+			"tag": "colorectal cancer",
+			"zh": "大腸直腸癌",
+			"aliases": [
+				"大腸癌",
+				"直腸癌",
+				"結腸癌",
+				"大腸直腸癌",
+				"colorectal cancer",
+				"colon cancer",
+				"rectal cancer"
+			]
+		},
+		{
+			"id": "TAG-008",
+			"type": "Disease",
+			"tag": "cancer stem cells",
+			"zh": "癌幹細胞",
+			"aliases": [
+				"癌幹細胞",
+				"cancer stem cell",
+				"cancer stem cells",
+				"CSC"
+			]
+		},
+		{
+			"id": "TAG-009",
+			"type": "Function",
+			"tag": "neural regeneration",
+			"zh": "神經再生",
+			"aliases": [
+				"神經再生",
+				"神經突",
+				"neurite",
+				"neurite outgrowth",
+				"neural regeneration"
+			]
+		},
+		{
+			"id": "TAG-010",
+			"type": "Function",
+			"tag": "anti-fibrosis",
+			"zh": "抗纖維化",
+			"aliases": [
+				"纖維化",
+				"抗纖維化",
+				"fibrosis",
+				"anti-fibrosis",
+				"antifibrotic",
+				"口腔黏膜下纖維化",
+				"oral submucous fibrosis",
+				"OSF"
+			]
+		},
+		{
+			"id": "TAG-011",
+			"type": "Function",
+			"tag": "wound healing",
+			"zh": "傷口癒合",
+			"aliases": [
+				"傷口",
+				"傷口癒合",
+				"慢性傷口",
+				"wound",
+				"wound healing",
+				"chronic wound"
+			]
+		},
+		{
+			"id": "TAG-012",
+			"type": "Function",
+			"tag": "stem cell proliferation",
+			"zh": "幹細胞增殖",
+			"aliases": [
+				"幹細胞",
+				"幹細胞增殖",
+				"stem cell",
+				"stem cells",
+				"stem cell proliferation"
+			]
+		},
+		{
+			"id": "TAG-013",
+			"type": "Function",
+			"tag": "immunomodulation",
+			"zh": "免疫調節",
+			"aliases": [
+				"免疫",
+				"免疫調節",
+				"immunity",
+				"immune modulation",
+				"immunomodulation"
+			]
+		},
+		{
+			"id": "TAG-014",
+			"type": "Function",
+			"tag": "antioxidant",
+			"zh": "抗氧化",
+			"aliases": [
+				"抗氧化",
+				"oxidative stress",
+				"antioxidant",
+				"anti-oxidation"
+			]
+		},
+		{
+			"id": "TAG-015",
+			"type": "Exposure",
+			"tag": "fine particulate matter",
+			"zh": "細懸浮微粒",
+			"aliases": [
+				"PM2.5",
+				"細懸浮微粒",
+				"細顆粒物",
+				"fine particulate matter",
+				"particulate matter"
+			]
+		},
+		{
+			"id": "TAG-016",
+			"type": "Disease",
+			"tag": "coronavirus disease",
+			"zh": "冠狀病毒疾病",
+			"aliases": [
+				"冠狀病毒",
+				"新冠",
+				"COVID",
+				"COVID-19",
+				"SARS-CoV-2",
+				"coronavirus",
+				"coronavirus disease"
+			]
+		},
+		{
+			"id": "TAG-017",
+			"type": "Technology",
+			"tag": "exosome",
+			"zh": "外泌體",
+			"aliases": [
+				"外泌體",
+				"胞外囊泡",
+				"exosome",
+				"exosomes",
+				"extracellular vesicle",
+				"EV"
+			]
+		},
+		{
+			"id": "TAG-018",
+			"type": "Technology",
+			"tag": "GMI",
+			"zh": "GMI",
+			"aliases": [
+				"GMI",
+				"FIP-gmi",
+				"Ganoderma microsporum immunomodulatory protein"
+			]
+		},
+		{
+			"id": "TAG-019",
+			"type": "Disease",
+			"tag": "cancer",
+			"zh": "癌症",
+			"aliases": [
+				"癌症",
+				"cancer",
+				"oncology",
+				"tumor",
+				"tumour"
+			]
+		},
+		{
+			"id": "TAG-020",
+			"type": "Technology",
+			"tag": "monoclonal antibody",
+			"zh": "單株抗體",
+			"aliases": [
+				"單株抗體",
+				"單抗",
+				"monoclonal antibody",
+				"mAb"
+			]
+		},
+		{
+			"id": "TAG-021",
+			"type": "Function",
+			"tag": "antiviral",
+			"zh": "抗病毒",
+			"aliases": [
+				"抗病毒",
+				"抗病毒感染",
+				"antiviral",
+				"anti-viral"
+			]
+		},
+		{
+			"id": "TAG-022",
+			"type": "Function",
+			"tag": "anti-inflammatory",
+			"zh": "抗發炎",
+			"aliases": [
+				"抗發炎",
+				"抗炎",
+				"anti-inflammatory",
+				"anti-inflammation",
+				"inflammation"
+			]
+		},
+		{
+			"id": "TAG-023",
+			"type": "Mechanism",
+			"tag": "apoptosis",
+			"zh": "細胞凋亡",
+			"aliases": [
+				"細胞凋亡",
+				"凋亡",
+				"apoptosis",
+				"apoptotic cell death"
+			]
+		},
+		{
+			"id": "TAG-024",
+			"type": "Mechanism",
+			"tag": "autophagy",
+			"zh": "自噬",
+			"aliases": [
+				"自噬",
+				"autophagy",
+				"autophagic cell death"
+			]
+		},
+		{
+			"id": "TAG-025",
+			"type": "Mechanism",
+			"tag": "EGFR",
+			"zh": "EGFR",
+			"aliases": [
+				"EGFR",
+				"epidermal growth factor receptor",
+				"ErbB receptor"
+			]
+		},
+		{
+			"id": "TAG-026",
+			"type": "Mechanism",
+			"tag": "STAT3",
+			"zh": "STAT3",
+			"aliases": [
+				"STAT3",
+				"signal transducer and activator of transcription 3"
+			]
+		},
+		{
+			"id": "TAG-027",
+			"type": "Mechanism",
+			"tag": "PI3K/Akt",
+			"zh": "PI3K/Akt",
+			"aliases": [
+				"PI3K",
+				"PI3K/Akt",
+				"AKT",
+				"Akt pathway"
+			]
+		},
+		{
+			"id": "TAG-028",
+			"type": "Function",
+			"tag": "drug resistance",
+			"zh": "抗藥性",
+			"aliases": [
+				"抗藥性",
+				"藥物抗性",
+				"drug resistance",
+				"chemoresistance",
+				"osimertinib resistance"
+			]
+		},
+		{
+			"id": "TAG-029",
+			"type": "Function",
+			"tag": "metastasis",
+			"zh": "腫瘤轉移",
+			"aliases": [
+				"轉移",
+				"腫瘤轉移",
+				"metastasis",
+				"migration",
+				"invasion"
+			]
+		},
+		{
+			"id": "TAG-030",
+			"type": "Disease",
+			"tag": "spinal cord injury",
+			"zh": "脊髓損傷",
+			"aliases": [
+				"脊髓損傷",
+				"spinal cord injury",
+				"SCI"
+			]
+		},
+		{
+			"id": "TAG-031",
+			"type": "Disease",
+			"tag": "traumatic brain injury",
+			"zh": "創傷性腦損傷",
+			"aliases": [
+				"創傷性腦損傷",
+				"腦外傷",
+				"traumatic brain injury",
+				"TBI"
+			]
+		},
+		{
+			"id": "TAG-032",
+			"type": "Disease",
+			"tag": "oral mucositis",
+			"zh": "口腔黏膜炎",
+			"aliases": [
+				"口腔黏膜炎",
+				"口腔炎",
+				"oral mucositis",
+				"mucositis",
+				"stomatitis"
+			]
+		},
+		{
+			"id": "TAG-033",
+			"type": "Disease",
+			"tag": "periodontitis",
+			"zh": "牙周炎",
+			"aliases": [
+				"牙周炎",
+				"糖尿病牙周炎",
+				"periodontitis",
+				"diabetic periodontitis"
+			]
+		},
+		{
+			"id": "TAG-034",
+			"type": "Disease",
+			"tag": "melanoma",
+			"zh": "黑色素瘤",
+			"aliases": [
+				"黑色素瘤",
+				"melanoma"
+			]
+		},
+		{
+			"id": "TAG-035",
+			"type": "Disease",
+			"tag": "osteosarcoma",
+			"zh": "骨肉瘤",
+			"aliases": [
+				"骨肉瘤",
+				"osteosarcoma"
+			]
+		},
+		{
+			"id": "TAG-036",
+			"type": "Function",
+			"tag": "myoblast differentiation",
+			"zh": "肌母細胞分化",
+			"aliases": [
+				"肌母細胞",
+				"肌肉再生",
+				"myoblast",
+				"myoblast differentiation",
+				"muscle regeneration"
+			]
+		},
+		{
+			"id": "TAG-037",
+			"type": "Topic",
+			"tag": "safety",
+			"zh": "安全性",
+			"aliases": [
+				"安全",
+				"安全性",
+				"safety",
+				"toxicity",
+				"toxicology",
+				"oral safety"
+			]
+		}
+	],
+	"journals": [
+		{
+			"id": "JRN-0001",
+			"title": "Ganoderma microsporum-derived fungal immunomodulatory protein (GMI) promotes functional recovery after spinal cord injury by modulating anti-inflammation and enhancing regeneration",
+			"titleShort": "Ganoderma microsporum-derived fungal immunomodulatory protein (GMI) promotes functional recovery after spinal cord injury by modulating anti-inflammation and enhancing regeneration",
+			"year": 2026,
+			"journal": "Experimental Neurology",
+			"authors": [
+				"Tu, Tsung-Hsi",
+				"Chen, Ching-Jung",
+				"Fay, Li-Yu",
+				"Lin, Zhi-Hu",
+				"Hsu, Wang-Yu",
+				"Hung, Chien-Hui",
+				"Lee, Meng-Jen",
+				"Tsai, May-Jywan",
+				"Tseng, Ai-Jung",
+				"Wu, Jau-Ching",
+				"Huang, Wen-Cheng",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.1016/j.expneurol.2025.115536",
+			"pmid": "41173225",
+			"primaryTag": "spinal cord injury",
+			"tags": [
+				"spinal cord injury",
+				"anti-inflammatory",
+				"neural regeneration",
+				"immunomodulation",
+				"GMI"
+			],
+			"aliases": [
+				"axonal regeneration",
+				"neurogenesis",
+				"microglia",
+				"functional recovery"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.expneurol.2025.115536",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/234#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0002",
+			"title": "Ganoderma microsporum Immunomodulatory Protein (GMI) Enhances Phagocytosis by Suppressing STAT3/CD47 Signaling in EGFR-Mutant NSCLC Resistant to Gefitinib and Osimertinib",
+			"titleShort": "Ganoderma microsporum Immunomodulatory Protein (GMI) Enhances Phagocytosis by Suppressing STAT3/CD47 Signaling in EGFR-Mutant NSCLC Resistant to Gefitinib and Osimertinib",
+			"year": 2026,
+			"journal": "Journal of Cancer",
+			"authors": [
+				"Hsieh, Ya-Chu",
+				"Hsin, I.-Lun",
+				"Chiu, Ling-Yen",
+				"Hung, Yu-Chien",
+				"Kang, Yu-Ting",
+				"Chang, Hui-Yi",
+				"Lin, Ching-Hsiung",
+				"Ko, Jiunn-Liang",
+				"Liu, Yu-Fan"
+			],
+			"doi": "10.7150/jca.124363",
+			"pmid": "41438583",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"EGFR",
+				"STAT3",
+				"drug resistance",
+				"immunomodulation",
+				"GMI"
+			],
+			"aliases": [
+				"CD47",
+				"gefitinib",
+				"osimertinib",
+				"phagocytosis",
+				"EGFR-mutant NSCLC"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.7150/jca.124363",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/239#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0042",
+			"title": "Ganoderma Microsporum immunomodulatory protein suppresses osteosarcoma growth through redox imbalance and ER stress-driven apoptosis",
+			"titleShort": "Ganoderma Microsporum immunomodulatory protein suppresses osteosarcoma growth through redox imbalance and ER stress-driven apoptosis",
+			"year": 2026,
+			"journal": "Bioorganic Chemistry",
+			"authors": [
+				"Sun, Ying-Sui",
+				"Chang, Chi-Jen",
+				"Chang, Tsung-Ming",
+				"Chen, Peng",
+				"Liu, Ju-Fang"
+			],
+			"doi": "10.1016/j.bioorg.2026.109909",
+			"pmid": "",
+			"primaryTag": "osteosarcoma",
+			"tags": [
+				"cancer",
+				"osteosarcoma",
+				"apoptosis",
+				"GMI"
+			],
+			"aliases": [
+				"endoplasmic reticulum stress",
+				"ER stress",
+				"redox imbalance",
+				"oxidative stress"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.bioorg.2026.109909",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/249#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0003",
+			"title": "rFIP-GMI Suppresses IGF-1-Induced Invasion and Migration in Breast Cancer Cells via PI3K/Akt/β-Catenin Inhibition",
+			"titleShort": "rFIP-GMI Suppresses IGF-1-Induced Invasion and Migration in Breast Cancer Cells via PI3K/Akt/β-Catenin Inhibition",
+			"year": 2025,
+			"journal": "Drug Development Research",
+			"authors": [
+				"Liao, Wen-Ling",
+				"Wu, Yu-Ying",
+				"Liu, Yu-Fan",
+				"Lan, Pei-Chi",
+				"Cheng, Yu-Chun",
+				"Hung, Yueh-Tzu",
+				"Liang, Hsin-Wen",
+				"Lee, Huei-Jane",
+				"Hsieh, Yi-Hsien",
+				"Cheng, Chun-Wen"
+			],
+			"doi": "10.1002/ddr.70202",
+			"pmid": "41294378",
+			"primaryTag": "breast cancer",
+			"tags": [
+				"cancer",
+				"breast cancer",
+				"PI3K/Akt",
+				"metastasis",
+				"GMI"
+			],
+			"aliases": [
+				"IGF-1",
+				"beta-catenin",
+				"β-catenin",
+				"EMT",
+				"triple-negative breast cancer",
+				"TNBC",
+				"rFIP-GMI"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1002/ddr.70202",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/236#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0004",
+			"title": "GMI, a Fungal Immunomodulatory Protein From Ganoderma microsporum, Induces Different Cytotoxicity in Parental and Osimertinib-Resistant EGFR-Mutated Lung Cancer Cells via Apoptotic and Autophagic Cell Death",
+			"titleShort": "GMI, a Fungal Immunomodulatory Protein From Ganoderma microsporum, Induces Different Cytotoxicity in Parental and Osimertinib-Resistant EGFR-Mutated Lung Cancer Cells via Apoptotic and Autophagic Cell Death",
+			"year": 2025,
+			"journal": "Basic & Clinical Pharmacology & Toxicology",
+			"authors": [
+				"Kang, Yu-Ting",
+				"Hsin, I.-Lun",
+				"Su, Pin-Tzu",
+				"Hsieh, Ya-Chu",
+				"Chang, Hui-Yi",
+				"Ko, Jiunn-Liang",
+				"Tsai, Jen-Ning"
+			],
+			"doi": "10.1111/bcpt.70143",
+			"pmid": "41269207",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"EGFR",
+				"drug resistance",
+				"apoptosis",
+				"autophagy",
+				"GMI"
+			],
+			"aliases": [
+				"osimertinib",
+				"osimertinib resistance",
+				"EGFR-mutant lung cancer"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1111/bcpt.70143",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/235#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0005",
+			"title": "Suppression of tumor growth by GMI, an edible fungal immunomodulatory protein, is associated with targeting GSK3β‑mediated proteasomal degradation of PD‑L1",
+			"titleShort": "Suppression of tumor growth by GMI, an edible fungal immunomodulatory protein, is associated with targeting GSK3β‑mediated proteasomal degradation of PD‑L1",
+			"year": 2025,
+			"journal": "International Journal of Molecular Medicine",
+			"authors": [
+				"Hua, Wei-Jyun",
+				"Huang, Li-Chen",
+				"Lin, Zhi-Hu",
+				"Ciou, Yi-Ru",
+				"Lin, Kai-Fan",
+				"Liao, Li-Lan",
+				"Hsu, Wei-Hung",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.3892/ijmm.2025.5658",
+			"pmid": "41070618",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"immunomodulation",
+				"GMI"
+			],
+			"aliases": [
+				"PD-L1",
+				"GSK3β",
+				"GSK3 beta",
+				"proteasomal degradation",
+				"antitumor immunity"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.3892/ijmm.2025.5658",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/233#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0006",
+			"title": "Broad-spectrum antiviral activity of Ganoderma microsporum immunomodulatory protein: Targeting glycoprotein gB to inhibit EBV and HSV-1 infections via viral fusion blockage",
+			"titleShort": "Broad-spectrum antiviral activity of Ganoderma microsporum immunomodulatory protein",
+			"year": 2025,
+			"journal": "International Journal of Biological Macromolecules",
+			"authors": [
+				"Vo, Di Ngoc Kha",
+				"Ho, Ha Phan Thanh",
+				"Wu, Li-Syuan",
+				"Chen, Yi-Yun",
+				"Trinh, Hang Thi Viet",
+				"Lin, Tung-Yi",
+				"Lim, Yat-Yuen",
+				"Tsai, Keng-Chang",
+				"Tsai, Ming-Han"
+			],
+			"doi": "10.1016/j.ijbiomac.2025.142179",
+			"pmid": "40101816",
+			"primaryTag": "antiviral",
+			"tags": [
+				"antiviral",
+				"GMI"
+			],
+			"aliases": [
+				"EBV",
+				"Epstein-Barr virus",
+				"HSV-1",
+				"herpes simplex virus 1",
+				"glycoprotein gB",
+				"viral fusion"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.ijbiomac.2025.142179",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/229#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0007",
+			"title": "Integrin αV Inhibition by GMI, a Ganoderma Microsporum Immunomodulatory Protein, Abolish Stemness and Migration in EGFR-Mutated Lung Cancer Cells Resistant to Osimertinib",
+			"titleShort": "Integrin αV Inhibition by GMI, a Ganoderma Microsporum Immunomodulatory Protein, Abolish Stemness and Migration in EGFR-Mutated Lung Cancer Cells Resistant to Osimertinib",
+			"year": 2024,
+			"journal": "Environmental Toxicology",
+			"authors": [
+				"Kang, Yu-Ting",
+				"Chang, Hui-Yi",
+				"Hsieh, Ya-Chu",
+				"Chou, Chia-Hsuan",
+				"Hsin, I.-Lun",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1002/tox.24399",
+			"pmid": "39152744",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"EGFR",
+				"drug resistance",
+				"cancer stem cells",
+				"metastasis",
+				"GMI"
+			],
+			"aliases": [
+				"integrin αV",
+				"integrin alphaV",
+				"osimertinib",
+				"stemness",
+				"cell migration"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1002/tox.24399",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/206#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0008",
+			"title": "Regimen on Dnaja3 haploinsufficiency mediated sarcopenic obesity with imbalanced mitochondrial homeostasis and lipid metabolism",
+			"titleShort": "Regimen on Dnaja3 haploinsufficiency mediated sarcopenic obesity with imbalanced mitochondrial homeostasis and lipid metabolism",
+			"year": 2024,
+			"journal": "Journal of Cachexia, Sarcopenia and Muscle",
+			"authors": [
+				"Fann, Yu-Ning",
+				"Teo, Wan-Huai",
+				"Lee, Hsin-Chen",
+				"Liao, Chen-Chung",
+				"Tsay, Yeou-Guang",
+				"Huang, Tung-Fu",
+				"Lo, Jeng-Fan"
+			],
+			"doi": "10.1002/jcsm.13549",
+			"pmid": "39132696",
+			"primaryTag": "myoblast differentiation",
+			"tags": [
+				"myoblast differentiation",
+				"GMI"
+			],
+			"aliases": [
+				"sarcopenic obesity",
+				"sarcopenia",
+				"DNAJA3",
+				"Dnaja3",
+				"mitochondrial homeostasis",
+				"lipid metabolism"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1002/jcsm.13549",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/207#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0009",
+			"title": "Ganoderma Microsporum Immunomodulatory Protein Alleviates Inflammaging and Oxidative Stress in Diabetes-Associated Periodontitis via Nrf2 Signaling Activation: An In Vitro Study",
+			"titleShort": "Ganoderma Microsporum Immunomodulatory Protein Alleviates Inflammaging and Oxidative Stress in Diabetes-Associated Periodontitis via Nrf2 Signaling Activation",
+			"year": 2024,
+			"journal": "Antioxidants",
+			"authors": [
+				"Su, Ni-Yu",
+				"Ng, Min Yee",
+				"Liao, Heng-Yi",
+				"Liao, Yi-Wen",
+				"Wu, Movina",
+				"Chao, Shih-Chi",
+				"Yu, Cheng-Chia",
+				"Chang, Yu-Chao"
+			],
+			"doi": "10.3390/antiox13070817",
+			"pmid": "39061886",
+			"primaryTag": "periodontitis",
+			"tags": [
+				"periodontitis",
+				"anti-inflammatory",
+				"antioxidant",
+				"GMI"
+			],
+			"aliases": [
+				"inflammaging",
+				"oxidative stress",
+				"Nrf2",
+				"diabetic periodontitis"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.3390/antiox13070817",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/205#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0010",
+			"title": "Ganoderma microsporum immunomodulatory protein combined with KRASG12C inhibitor impedes intracellular AKT/ERK network to suppress lung cancer cells with KRAS mutation",
+			"titleShort": "Ganoderma microsporum immunomodulatory protein combined with KRASG12C inhibitor impedes intracellular AKT/ERK network to suppress lung cancer cells with KRAS mutation",
+			"year": 2024,
+			"journal": "International Journal of Biological Macromolecules",
+			"authors": [
+				"Hua, Wei-Jyun",
+				"Hwang, Wei-Lun",
+				"Yeh, Hsin",
+				"Lin, Zhi-Hu",
+				"Hsu, Wei-Hung",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.1016/j.ijbiomac.2024.129291",
+			"pmid": "38211909",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"PI3K/Akt",
+				"GMI"
+			],
+			"aliases": [
+				"KRAS",
+				"KRASG12C",
+				"KRAS G12C",
+				"KRAS inhibitor",
+				"ERK"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.ijbiomac.2024.129291",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/192#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0011",
+			"title": "Effects of Reishimmune-S, a Fungal Immunomodulatory Peptide Supplement, on the Quality of Life and Circulating Natural Killer Cell Profiles of Patients With Early Breast Cancer Receiving Adjuvant Endocrine Therapy",
+			"titleShort": "Effects of Reishimmune-S, a Fungal Immunomodulatory Peptide Supplement, on the Quality of Life and Circulating Natural Killer Cell Profiles of Patients With Early Breast Cancer Receiving Adjuvant Endocrine Therapy",
+			"year": 2024,
+			"journal": "Integrative Cancer Therapies",
+			"authors": [
+				"Su, Ying-Wen",
+				"Huang, Wen-Yu",
+				"Lin, Sheng-Hsiang",
+				"Yang, Po-Sheng"
+			],
+			"doi": "10.1177/15347354241242120",
+			"pmid": "38590244",
+			"primaryTag": "breast cancer",
+			"tags": [
+				"cancer",
+				"breast cancer",
+				"immunomodulation",
+				"GMI"
+			],
+			"aliases": [
+				"Reishimmune-S",
+				"NK cells",
+				"natural killer cells",
+				"quality of life",
+				"endocrine therapy",
+				"clinical pilot"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1177/15347354241242120",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/194#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0012",
+			"title": "GMI, a Ganoderma microsporum protein, abolishes focal adhesion network to reduce cell migration and metastasis of lung cancer",
+			"titleShort": "GMI, a Ganoderma microsporum protein, abolishes focal adhesion network to reduce cell migration and metastasis of lung cancer",
+			"year": 2023,
+			"journal": "Life Sciences",
+			"authors": [
+				"Lo, Hung-Chih",
+				"Hua, Wei-Jyun",
+				"Yeh, Hsin",
+				"Lin, Zhi-Hu",
+				"Huang, Li-Chen",
+				"Ciou, Yi-Ru",
+				"Ruan, Runcheng",
+				"Lin, Kai-Fan",
+				"Tseng, Ai-Jung",
+				"Wu, Alexander T. H.",
+				"Hsu, Wei-Hung",
+				"Chao, Chi-Hong",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.1016/j.lfs.2023.122255",
+			"pmid": "37967792",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"metastasis",
+				"GMI"
+			],
+			"aliases": [
+				"focal adhesion",
+				"FAK",
+				"integrin",
+				"Slug",
+				"EMT",
+				"cell migration"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.lfs.2023.122255",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/190#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0013",
+			"title": "Ganoderma microsporum immunomodulatory protein as an extracellular epidermal growth factor receptor (EGFR) degrader for suppressing EGFR-positive lung cancer cells",
+			"titleShort": "Ganoderma microsporum immunomodulatory protein as an extracellular epidermal growth factor receptor (EGFR) degrader for suppressing EGFR-positive lung cancer cells",
+			"year": 2023,
+			"journal": "Cancer Letters",
+			"authors": [
+				"Hua, Wei-Jyun",
+				"Yeh, Hsin",
+				"Lin, Zhi-Hu",
+				"Tseng, Ai-Jung",
+				"Huang, Li-Chen",
+				"Qiu, Wei-Lun",
+				"Tu, Tsung-Hsi",
+				"Wang, Ding-Han",
+				"Hsu, Wei-Hung",
+				"Hwang, Wei-Lun",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.1016/j.canlet.2023.216458",
+			"pmid": "37865161",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"EGFR",
+				"GMI"
+			],
+			"aliases": [
+				"EGFR degrader",
+				"extracellular EGFR degrader",
+				"NSCLC"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.canlet.2023.216458",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/186#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0014",
+			"title": "GMI, a fungal immunomodulatory protein, ameliorates SARS-CoV-2 envelope protein-induced inflammation in macrophages via inhibition of MAPK pathway",
+			"titleShort": "GMI, a fungal immunomodulatory protein, ameliorates SARS-CoV-2 envelope protein-induced inflammation in macrophages via inhibition of MAPK pathway",
+			"year": 2023,
+			"journal": "International Journal of Biological Macromolecules",
+			"authors": [
+				"Lin, Zhi-Hu",
+				"Yeh, Hsin",
+				"Lo, Hung-Chih",
+				"Hua, Wei-Jyun",
+				"Ni, Ming-Yang",
+				"Wang, Li-Kai",
+				"Chang, Ting-Ting",
+				"Yang, Muh-Hwa",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.1016/j.ijbiomac.2023.124648",
+			"pmid": "37119883",
+			"primaryTag": "coronavirus disease",
+			"tags": [
+				"coronavirus disease",
+				"anti-inflammatory",
+				"immunomodulation",
+				"GMI"
+			],
+			"aliases": [
+				"SARS-CoV-2 envelope protein",
+				"MAPK",
+				"macrophage",
+				"IL-6",
+				"IL-12"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.ijbiomac.2023.124648",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/180#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0015",
+			"title": "Ganoderma microsporum immunomodulatory protein acts as a multifunctional broad-spectrum antiviral against SARS-CoV-2 by interfering virus binding to the host cells and spike-mediated cell fusion",
+			"titleShort": "Ganoderma microsporum immunomodulatory protein acts as a multifunctional broad-spectrum antiviral against SARS-CoV-2 by interfering virus binding to the host cells and spike-mediated cell fusion",
+			"year": 2022,
+			"journal": "Biomedicine & Pharmacotherapy = Biomedecine & Pharmacotherapie",
+			"authors": [
+				"Ho, Ha Phan Thanh",
+				"Vo, Di Ngoc Kha",
+				"Lin, Tung-Yi",
+				"Hung, Jo-Ning",
+				"Chiu, Ya-Hui",
+				"Tsai, Ming-Han"
+			],
+			"doi": "10.1016/j.biopha.2022.113766",
+			"pmid": "36271550",
+			"primaryTag": "coronavirus disease",
+			"tags": [
+				"coronavirus disease",
+				"antiviral",
+				"GMI"
+			],
+			"aliases": [
+				"SARS-CoV-2",
+				"spike protein",
+				"ACE2",
+				"viral binding",
+				"cell fusion"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.biopha.2022.113766",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/170#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0016",
+			"title": "GMI, Ganoderma microsporum protein, suppresses cell mobility and increases temozolomide sensitivity through induction of Slug degradation in glioblastoma multiforme cells",
+			"titleShort": "GMI, Ganoderma microsporum protein, suppresses cell mobility and increases temozolomide sensitivity through induction of Slug degradation in glioblastoma multiforme cells",
+			"year": 2022,
+			"journal": "International Journal of Biological Macromolecules",
+			"authors": [
+				"Tseng, Ai-Jung",
+				"Tu, Tsung-Hsi",
+				"Hua, Wei-Jyun",
+				"Yeh, Hsin",
+				"Chen, Ching-Jung",
+				"Lin, Zhi-Hu",
+				"Hsu, Wei-Hung",
+				"Chen, Ying-Lan",
+				"Hsu, Chuan-Chih",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.1016/j.ijbiomac.2022.08.024",
+			"pmid": "35952817",
+			"primaryTag": "brain cancer",
+			"tags": [
+				"cancer",
+				"brain cancer",
+				"drug resistance",
+				"metastasis",
+				"GMI"
+			],
+			"aliases": [
+				"glioblastoma",
+				"GBM",
+				"temozolomide",
+				"Slug",
+				"proteasomal degradation"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.ijbiomac.2022.08.024",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/163#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0017",
+			"title": "GMI, a protein from Ganoderma microsporum, induces ACE2 degradation to alleviate infection of SARS-CoV-2 Spike-pseudotyped virus",
+			"titleShort": "GMI, a protein from Ganoderma microsporum, induces ACE2 degradation to alleviate infection of SARS-CoV-2 Spike-pseudotyped virus",
+			"year": 2022,
+			"journal": "Phytomedicine: International Journal of Phytotherapy and Phytopharmacology",
+			"authors": [
+				"Yeh, Hsin",
+				"Vo, Di Ngoc Kha",
+				"Lin, Zhi-Hu",
+				"Ho, Ha Phan Thanh",
+				"Hua, Wei-Jyun",
+				"Qiu, Wei-Lun",
+				"Tsai, Ming-Han",
+				"Lin, Tung-Yi"
+			],
+			"doi": "10.1016/j.phymed.2022.154215",
+			"pmid": "35691077",
+			"primaryTag": "coronavirus disease",
+			"tags": [
+				"coronavirus disease",
+				"antiviral",
+				"GMI"
+			],
+			"aliases": [
+				"SARS-CoV-2",
+				"ACE2",
+				"spike-pseudotyped virus",
+				"ACE2 degradation",
+				"prevention"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.phymed.2022.154215",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/144#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0018",
+			"title": "Safety assessment of the fungal immunomodulatory protein from Ganoderma microsporum (GMI) derived from engineered Pichia pastoris: Genetic toxicology, a 13-week oral gavage toxicity study, and an embryo-fetal developmental toxicity study in Sprague-Dawley rats",
+			"titleShort": "Safety assessment of the fungal immunomodulatory protein from Ganoderma microsporum (GMI) derived from engineered Pichia pastoris",
+			"year": 2022,
+			"journal": "Toxicology Reports",
+			"authors": [
+				"Fu, Hsu-Yuan",
+				"Hseu, Ruey-Shyang"
+			],
+			"doi": "10.1016/j.toxrep.2022.05.013",
+			"pmid": "36518484",
+			"primaryTag": "safety",
+			"tags": [
+				"safety",
+				"GMI"
+			],
+			"aliases": [
+				"genetic toxicology",
+				"13-week toxicity",
+				"developmental toxicity",
+				"embryo-fetal toxicity",
+				"oral safety",
+				"Pichia pastoris"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.toxrep.2022.05.013",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/145#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0019",
+			"title": "Immunomodulatory protein from ganoderma microsporum protects against oxidative damages and cognitive impairments after traumatic brain injury",
+			"titleShort": "Immunomodulatory protein from ganoderma microsporum protects against oxidative damages and cognitive impairments after traumatic brain injury",
+			"year": 2022,
+			"journal": "Molecular and Cellular Neurosciences",
+			"authors": [
+				"Chao, Ming-Wei",
+				"Liao, Chia-Wei",
+				"Lin, Chin-Hung",
+				"Tseng, Chia-Yi"
+			],
+			"doi": "10.1016/j.mcn.2022.103735",
+			"pmid": "35562037",
+			"primaryTag": "traumatic brain injury",
+			"tags": [
+				"traumatic brain injury",
+				"antioxidant",
+				"neural regeneration",
+				"GMI"
+			],
+			"aliases": [
+				"TBI",
+				"oxidative stress",
+				"cognitive impairment",
+				"cognitive function",
+				"neurite regeneration"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.mcn.2022.103735",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/139#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0020",
+			"title": "Efficacy of GMI, a fungal immunomodulatory protein, for head and neck cancer patients with chemotherapy-related oral mucositis: An open-labeled prospective single-arm study",
+			"titleShort": "Efficacy of GMI, a fungal immunomodulatory protein, for head and neck cancer patients with chemotherapy-related oral mucositis",
+			"year": 2022,
+			"journal": "Medicine",
+			"authors": [
+				"Lu, Hsueh-Ju",
+				"Li, Che-Hsing",
+				"Kang, Yu-Ting",
+				"Wu, Chi-Mei",
+				"Wu, Chih-Hsien",
+				"Ko, Jiunn-Liang",
+				"Wu, Ming-Fang"
+			],
+			"doi": "10.1097/MD.0000000000029185",
+			"pmid": "35482987",
+			"primaryTag": "oral mucositis",
+			"tags": [
+				"oral mucositis",
+				"head and neck cancer",
+				"GMI"
+			],
+			"aliases": [
+				"chemotherapy-related oral mucositis",
+				"chemoradiotherapy",
+				"clinical study"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1097/MD.0000000000029185",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/136#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0021",
+			"title": "GMI, an Immunomodulatory Peptide from Ganoderma microsporum, Restrains Periprosthetic Joint Infections via Modulating the Functions of Myeloid-Derived Suppressor Cells and Effector T Cells",
+			"titleShort": "GMI, an Immunomodulatory Peptide from Ganoderma microsporum, Restrains Periprosthetic Joint Infections via Modulating the Functions of Myeloid-Derived Suppressor Cells and Effector T Cells",
+			"year": 2021,
+			"journal": "International Journal of Molecular Sciences",
+			"authors": [
+				"Peng, Kuo-Ti",
+				"Chen, Jiun-Liang",
+				"Kuo, Liang-Tseng",
+				"Yu, Pei-An",
+				"Hsu, Wei-Hsiu",
+				"Lee, Chiang-Wen",
+				"Chang, Pey-Jium",
+				"Huang, Tsung-Yu"
+			],
+			"doi": "10.3390/ijms22136854",
+			"pmid": "34202218",
+			"primaryTag": "immunomodulation",
+			"tags": [
+				"immunomodulation",
+				"GMI"
+			],
+			"aliases": [
+				"periprosthetic joint infection",
+				"PJI",
+				"Staphylococcus aureus",
+				"MRSA",
+				"myeloid-derived suppressor cells",
+				"MDSC",
+				"T cells",
+				"biofilm"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.3390/ijms22136854",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/100#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0022",
+			"title": "Combination treatment of Src inhibitor Saracatinib with GMI, a Ganoderma microsporum immunomodulatory protein, induce synthetic lethality via autophagy and apoptosis in lung cancer cells",
+			"titleShort": "Combination treatment of Src inhibitor Saracatinib with GMI, a Ganoderma microsporum immunomodulatory protein, induce synthetic lethality via autophagy and apoptosis in lung cancer cells",
+			"year": 2021,
+			"journal": "Journal of Cellular Physiology",
+			"authors": [
+				"Chiu, Ling-Yen",
+				"Hsin, I.-Lun",
+				"Tsai, Jen-Ning",
+				"Chen, Chih-Jung",
+				"Ou, Chu-Chyn",
+				"Wu, Wen-Jun",
+				"Sheu, Gwo-Tarng",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1002/jcp.29924",
+			"pmid": "32686156",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"apoptosis",
+				"autophagy",
+				"GMI"
+			],
+			"aliases": [
+				"Src",
+				"saracatinib",
+				"synthetic lethality"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1002/jcp.29924",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/96#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0023",
+			"title": "Functional proteomic analysis reveals that fungal immunomodulatory protein reduced expressions of heat shock proteins correlates to apoptosis in lung cancer cells",
+			"titleShort": "Functional proteomic analysis reveals that fungal immunomodulatory protein reduced expressions of heat shock proteins correlates to apoptosis in lung cancer cells",
+			"year": 2021,
+			"journal": "Phytomedicine: International Journal of Phytotherapy and Phytopharmacology",
+			"authors": [
+				"Lin, Tung-Yi",
+				"Hua, Wei-Jyun",
+				"Yeh, Hsin",
+				"Tseng, Ai-Jung"
+			],
+			"doi": "10.1016/j.phymed.2020.153384",
+			"pmid": "33113507",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"apoptosis",
+				"GMI"
+			],
+			"aliases": [
+				"heat shock proteins",
+				"HSP",
+				"proteomics"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.phymed.2020.153384",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/99#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0024",
+			"title": "Ganoderma microsporum immunomodulatory protein, GMI, promotes C2C12 myoblast differentiation in vitro via upregulation of Tid1 and STAT3 acetylation",
+			"titleShort": "Ganoderma microsporum immunomodulatory protein, GMI, promotes C2C12 myoblast differentiation in vitro via upregulation of Tid1 and STAT3 acetylation",
+			"year": 2020,
+			"journal": "PloS One",
+			"authors": [
+				"Teo, Wan-Huai",
+				"Lo, Jeng-Fan",
+				"Fan, Yu-Ning",
+				"Huang, Chih-Yang",
+				"Huang, Tung-Fu"
+			],
+			"doi": "10.1371/journal.pone.0244791",
+			"pmid": "33382817",
+			"primaryTag": "myoblast differentiation",
+			"tags": [
+				"myoblast differentiation",
+				"STAT3",
+				"GMI"
+			],
+			"aliases": [
+				"C2C12",
+				"Tid1",
+				"DNAJA3",
+				"STAT3 acetylation",
+				"muscle regeneration"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1371/journal.pone.0244791",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/98#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0026",
+			"title": "CD133 inhibition via autophagic degradation in pemetrexed-resistant lung cancer cells by GMI, a fungal immunomodulatory protein from Ganoderma microsporum",
+			"titleShort": "CD133 inhibition via autophagic degradation in pemetrexed-resistant lung cancer cells by GMI, a fungal immunomodulatory protein from Ganoderma microsporum",
+			"year": 2020,
+			"journal": "British Journal of Cancer",
+			"authors": [
+				"Hsin, I.-Lun",
+				"Chiu, Ling-Yen",
+				"Ou, Chu-Chyn",
+				"Wu, Wen-Jun",
+				"Sheu, Gwo-Tarng",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1038/s41416-020-0885-8",
+			"pmid": "32448867",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"drug resistance",
+				"autophagy",
+				"GMI"
+			],
+			"aliases": [
+				"CD133",
+				"pemetrexed",
+				"pemetrexed resistance",
+				"autophagic degradation"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1038/s41416-020-0885-8",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/97#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0027",
+			"title": "Inhibition of proliferation and migration of melanoma cells by ketoconazole and Ganoderma immunomodulatory proteins",
+			"titleShort": "Inhibition of proliferation and migration of melanoma cells by ketoconazole and Ganoderma immunomodulatory proteins",
+			"year": 2019,
+			"journal": "Oncology Letters",
+			"authors": [
+				"Lu, Chun-Te",
+				"Leong, Pui-Ying",
+				"Hou, Ting-Yi",
+				"Kang, Yu-Ting",
+				"Chiang, Yan-Cheng",
+				"Hsu, Chih-Ting",
+				"Lin, Yan-De",
+				"Ko, Jiunn-Liang",
+				"Hsiao, Yu-Ping"
+			],
+			"doi": "10.3892/ol.2019.10355",
+			"pmid": "31289567",
+			"primaryTag": "melanoma",
+			"tags": [
+				"cancer",
+				"melanoma",
+				"metastasis",
+				"GMI"
+			],
+			"aliases": [
+				"ketoconazole",
+				"AMPK",
+				"MCP-1",
+				"cell migration"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.3892/ol.2019.10355",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/95#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0028",
+			"title": "The Effect of Ganoderma Microsporum immunomodulatory proteins on alleviating PM2.5-induced inflammatory responses in pregnant rats and fine particulate matter-induced neurological damage in the offsprings",
+			"titleShort": "The Effect of Ganoderma Microsporum immunomodulatory proteins on alleviating PM2.5-induced inflammatory responses in pregnant rats and fine particulate matter-induced neurological damage in the offsprings",
+			"year": 2019,
+			"journal": "Scientific Reports",
+			"authors": [
+				"Tseng, Chia-Yi",
+				"Yu, Jia-Yu",
+				"Chuang, Yu-Chen",
+				"Lin, Chia-Ying",
+				"Wu, Chun-Hao",
+				"Liao, Chia-Wei",
+				"Yang, Fu-Hua",
+				"Chao, Ming-Wei"
+			],
+			"doi": "10.1038/s41598-019-38810-5",
+			"pmid": "31048730",
+			"primaryTag": "fine particulate matter",
+			"tags": [
+				"fine particulate matter",
+				"anti-inflammatory",
+				"antioxidant",
+				"GMI"
+			],
+			"aliases": [
+				"PM2.5",
+				"pregnancy",
+				"offspring",
+				"neurological damage",
+				"memory impairment"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1038/s41598-019-38810-5",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/94#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0029",
+			"title": "The Protective Role of GMI, an Immunomodulatory Protein From Ganoderma microsporum, on 5-Fluorouracil-Induced Oral and Intestinal Mucositis",
+			"titleShort": "The Protective Role of GMI, an Immunomodulatory Protein From Ganoderma microsporum, on 5-Fluorouracil-Induced Oral and Intestinal Mucositis",
+			"year": 2019,
+			"journal": "Integrative Cancer Therapies",
+			"authors": [
+				"Li, Che-Hsing",
+				"Ko, Jiunn-Liang",
+				"Ou, Chu-Chyn",
+				"Lin, Wea-Lung",
+				"Yen, Cheng-Chieh",
+				"Hsu, Chih-Ting",
+				"Hsiao, Yu-Ping"
+			],
+			"doi": "10.1177/1534735419833795",
+			"pmid": "30879354",
+			"primaryTag": "oral mucositis",
+			"tags": [
+				"oral mucositis",
+				"GMI"
+			],
+			"aliases": [
+				"5-FU",
+				"5-fluorouracil",
+				"intestinal mucositis",
+				"chemotherapy-induced mucositis"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1177/1534735419833795",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/93#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0030",
+			"title": "Ganoderma immunomodulatory protein and chidamide down-regulate integrin-related signaling pathway result in migration inhibition and apoptosis induction",
+			"titleShort": "Ganoderma immunomodulatory protein and chidamide down-regulate integrin-related signaling pathway result in migration inhibition and apoptosis induction",
+			"year": 2018,
+			"journal": "Phytomedicine: International Journal of Phytotherapy and Phytopharmacology",
+			"authors": [
+				"Lu, Chun-Te",
+				"Leong, Pui-Ying",
+				"Hou, Ting-Yi",
+				"Huang, Sheng-Jia",
+				"Hsiao, Yu-Ping",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1016/j.phymed.2018.06.023",
+			"pmid": "30466626",
+			"primaryTag": "melanoma",
+			"tags": [
+				"cancer",
+				"melanoma",
+				"metastasis",
+				"apoptosis",
+				"GMI"
+			],
+			"aliases": [
+				"chidamide",
+				"integrin",
+				"integrin alphaV",
+				"cell migration"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.phymed.2018.06.023",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/92#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0031",
+			"title": "Anti-inflammatory and Neuroprotective Effects of Fungal Immunomodulatory Protein Involving Microglial Inhibition",
+			"titleShort": "Anti-inflammatory and Neuroprotective Effects of Fungal Immunomodulatory Protein Involving Microglial Inhibition",
+			"year": 2018,
+			"journal": "International Journal of Molecular Sciences",
+			"authors": [
+				"Chen, Wen-Ying",
+				"Chang, Cheng-Yi",
+				"Li, Jian-Ri",
+				"Wang, Jiaan-Der",
+				"Wu, Chih-Cheng",
+				"Kuan, Yu-Hsiang",
+				"Liao, Su-Lan",
+				"Wang, Wen-Yi",
+				"Chen, Chun-Jung"
+			],
+			"doi": "10.3390/ijms19113678",
+			"pmid": "30469316",
+			"primaryTag": "anti-inflammatory",
+			"tags": [
+				"anti-inflammatory",
+				"immunomodulation",
+				"antioxidant",
+				"neural regeneration",
+				"GMI"
+			],
+			"aliases": [
+				"neuroprotection",
+				"neuroinflammation",
+				"microglia",
+				"microglial inhibition"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.3390/ijms19113678",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/91#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0032",
+			"title": "GMI, a fungal immunomodulatory protein from Ganoderma microsporum, induce apoptosis via β-catenin suppression in lung cancer cells",
+			"titleShort": "GMI, a fungal immunomodulatory protein from Ganoderma microsporum, induce apoptosis via β-catenin suppression in lung cancer cells",
+			"year": 2018,
+			"journal": "Environmental Toxicology",
+			"authors": [
+				"Hsin, I.-Lun",
+				"Hsu, Jen-Chieh",
+				"Wu, Wen-Jun",
+				"Lu, Hsueh-Ju",
+				"Wu, Ming-Fang",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1002/tox.22582",
+			"pmid": "29974605",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"apoptosis",
+				"GMI"
+			],
+			"aliases": [
+				"beta-catenin",
+				"β-catenin",
+				"GSK3β",
+				"GSK3 beta"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1002/tox.22582",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/90#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0033",
+			"title": "Ganoderma microsporum immunomodulatory protein induces apoptosis and potentiates mitomycin C-induced apoptosis in urinary bladder urothelial carcinoma cells",
+			"titleShort": "Ganoderma microsporum immunomodulatory protein induces apoptosis and potentiates mitomycin C-induced apoptosis in urinary bladder urothelial carcinoma cells",
+			"year": 2018,
+			"journal": "Journal of Cellular Biochemistry",
+			"authors": [
+				"Huang, Sheng-Yuan",
+				"Chien, Chih-Cheng",
+				"Hseu, Ruey-Shyang",
+				"Huang, Victoria Ying Jen",
+				"Chiang, Shang Ying",
+				"Huang, Chi-Jung",
+				"Chen, Shao-Kuan",
+				"Tsai, Ru-Yin",
+				"Lin, Hsi-Ting",
+				"Cheng, Yu-Che"
+			],
+			"doi": "10.1002/jcb.26616",
+			"pmid": "29240252",
+			"primaryTag": "bladder cancer",
+			"tags": [
+				"cancer",
+				"bladder cancer",
+				"apoptosis",
+				"GMI"
+			],
+			"aliases": [
+				"urothelial carcinoma",
+				"bladder urothelial carcinoma",
+				"mitomycin C"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1002/jcb.26616",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/89#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0034",
+			"title": "Inhibitory effect of GMI, an immunomodulatory protein from Ganoderma microsporum, on myofibroblast activity and proinflammatory cytokines in human fibrotic buccal mucosal fibroblasts",
+			"titleShort": "Inhibitory effect of GMI, an immunomodulatory protein from Ganoderma microsporum, on myofibroblast activity and proinflammatory cytokines in human fibrotic buccal mucosal fibroblasts",
+			"year": 2018,
+			"journal": "Environmental Toxicology",
+			"authors": [
+				"Lee, Ping-Hui",
+				"Hsieh, Pei-Ling",
+				"Liao, Yi-Wen",
+				"Yu, Cheng-Chia"
+			],
+			"doi": "10.1002/tox.22489",
+			"pmid": "28984080",
+			"primaryTag": "anti-fibrosis",
+			"tags": [
+				"anti-fibrosis",
+				"anti-inflammatory",
+				"GMI"
+			],
+			"aliases": [
+				"oral submucous fibrosis",
+				"OSF",
+				"myofibroblast",
+				"IL-6",
+				"IL-8",
+				"arecoline"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1002/tox.22489",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/88#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0035",
+			"title": "GMI ablates cancer stemness and cisplatin resistance in oral carcinomas stem cells through IL-6/Stat3 signaling inhibition",
+			"titleShort": "GMI ablates cancer stemness and cisplatin resistance in oral carcinomas stem cells through IL-6/Stat3 signaling inhibition",
+			"year": 2017,
+			"journal": "Oncotarget",
+			"authors": [
+				"Wang, Tung Yuan",
+				"Yu, Cheng-Chia",
+				"Hsieh, Pei-Ling",
+				"Liao, Yi-Wen",
+				"Yu, Chuan-Hang",
+				"Chou, Ming-Yung"
+			],
+			"doi": "10.18632/oncotarget.19711",
+			"pmid": "29050290",
+			"primaryTag": "cancer stem cells",
+			"tags": [
+				"cancer",
+				"head and neck cancer",
+				"cancer stem cells",
+				"drug resistance",
+				"STAT3",
+				"GMI"
+			],
+			"aliases": [
+				"oral squamous cell carcinoma",
+				"OSCC",
+				"cisplatin resistance",
+				"IL-6",
+				"IL-6/STAT3"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.18632/oncotarget.19711",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/87#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0036",
+			"title": "Immunomodulatory Protein from Ganoderma microsporum Induces Pro-Death Autophagy through Akt-mTOR-p70S6K Pathway Inhibition in Multidrug Resistant Lung Cancer Cells",
+			"titleShort": "Immunomodulatory Protein from Ganoderma microsporum Induces Pro-Death Autophagy through Akt-mTOR-p70S6K Pathway Inhibition in Multidrug Resistant Lung Cancer Cells",
+			"year": 2015,
+			"journal": "PloS One",
+			"authors": [
+				"Chiu, Ling-Yen",
+				"Hu, Ming-E.",
+				"Yang, Tsung-Ying",
+				"Hsin, I.-Lun",
+				"Ko, Jiunn-Liang",
+				"Tsai, Kan-Jen",
+				"Sheu, Gwo-Tarng"
+			],
+			"doi": "10.1371/journal.pone.0125774",
+			"pmid": "25946033",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"drug resistance",
+				"autophagy",
+				"PI3K/Akt",
+				"GMI"
+			],
+			"aliases": [
+				"multidrug resistance",
+				"MDR",
+				"Akt-mTOR-p70S6K",
+				"docetaxel"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1371/journal.pone.0125774",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/86#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0037",
+			"title": "GMI, an Immunomodulatory Protein from Ganoderma microsporum, Potentiates Cisplatin-Induced Apoptosis via Autophagy in Lung Cancer Cells",
+			"titleShort": "GMI, an Immunomodulatory Protein from Ganoderma microsporum, Potentiates Cisplatin-Induced Apoptosis via Autophagy in Lung Cancer Cells",
+			"year": 2015,
+			"journal": "Molecular Pharmaceutics",
+			"authors": [
+				"Hsin, I.-Lun",
+				"Ou, Chu-Chyn",
+				"Wu, Ming-Fang",
+				"Jan, Ming-Shiou",
+				"Hsiao, Yi-Min",
+				"Lin, Ching-Hsiung",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1021/mp500840z",
+			"pmid": "25811903",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"apoptosis",
+				"autophagy",
+				"GMI"
+			],
+			"aliases": [
+				"cisplatin",
+				"caspase-3",
+				"caspase-7"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1021/mp500840z",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/85#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0038",
+			"title": "Inhibition of lysosome degradation on autophagosome formation and responses to GMI, an immunomodulatory protein from Ganoderma microsporum",
+			"titleShort": "Inhibition of lysosome degradation on autophagosome formation and responses to GMI, an immunomodulatory protein from Ganoderma microsporum",
+			"year": 2012,
+			"journal": "British Journal of Pharmacology",
+			"authors": [
+				"Hsin, I.-Lun",
+				"Sheu, Gwo-Tarng",
+				"Jan, Ming-Shiou",
+				"Sun, Hai-Lun",
+				"Wu, Tzu-Chin",
+				"Chiu, Ling-Yen",
+				"Lue, Ko-Huang",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1111/j.1476-5381.2012.02073.x",
+			"pmid": "22708544",
+			"primaryTag": "autophagy",
+			"tags": [
+				"autophagy",
+				"PI3K/Akt",
+				"GMI"
+			],
+			"aliases": [
+				"lysosome",
+				"autophagosome",
+				"chloroquine",
+				"mTOR",
+				"p70S6K"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1111/j.1476-5381.2012.02073.x",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/84#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0039",
+			"title": "GMI, an immunomodulatory protein from Ganoderma microsporum, induces autophagy in non-small cell lung cancer cells",
+			"titleShort": "GMI, an immunomodulatory protein from Ganoderma microsporum, induces autophagy in non-small cell lung cancer cells",
+			"year": 2011,
+			"journal": "Autophagy",
+			"authors": [
+				"Hsin, I.-Lun",
+				"Ou, Chu-Chyn",
+				"Wu, Tzu-Chin",
+				"Jan, Ming-Shiou",
+				"Wu, Ming-Fang",
+				"Chiu, Ling-Yen",
+				"Lue, Ko-Huang",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.4161/auto.7.8.15698",
+			"pmid": "21490426",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"autophagy",
+				"GMI"
+			],
+			"aliases": [
+				"NSCLC",
+				"p53",
+				"autophagic cell death"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.4161/auto.7.8.15698",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/82#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0040",
+			"title": "GMI, a Ganoderma immunomodulatory protein, down-regulates tumor necrosis factor α-induced expression of matrix metalloproteinase 9 via NF-κB pathway in human alveolar epithelial A549 cells",
+			"titleShort": "GMI, a Ganoderma immunomodulatory protein, down-regulates tumor necrosis factor α-induced expression of matrix metalloproteinase 9 via NF-κB pathway in human alveolar epithelial A549 cells",
+			"year": 2010,
+			"journal": "Journal of Agricultural and Food Chemistry",
+			"authors": [
+				"Lin, Ching-Hsiung",
+				"Hsiao, Yi-Min",
+				"Ou, Chu-Chyn",
+				"Lin, Yu-Wen",
+				"Chiu, Yi-Lin",
+				"Lue, Ko-Huang",
+				"Chang, Jan-Gowth",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1021/jf103068w",
+			"pmid": "21028821",
+			"primaryTag": "anti-inflammatory",
+			"tags": [
+				"anti-inflammatory",
+				"GMI"
+			],
+			"aliases": [
+				"TNF-alpha",
+				"TNF-α",
+				"MMP-9",
+				"MMP9",
+				"NF-kB",
+				"NF-κB",
+				"A549"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1021/jf103068w",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/13#list",
+			"newsUrl": ""
+		},
+		{
+			"id": "JRN-0041",
+			"title": "A new immunomodulatory protein from <i>Ganoderma microsporum</i> inhibits epidermal growth factor mediated migration and invasion in A549 lung cancer cells",
+			"titleShort": "A new immunomodulatory protein from <i>Ganoderma microsporum</i> inhibits epidermal growth factor mediated migration and invasion in A549 lung cancer cells",
+			"year": 2010,
+			"journal": "Process Biochemistry",
+			"authors": [
+				"Lin, Ching-Hsiung",
+				"Sheu, Gwo-Tarng",
+				"Lin, Yu-Wen",
+				"Yeh, Chin-Shui",
+				"Huang, Yu-Hsin",
+				"Lai, Yen-Chein",
+				"Chang, Jan-Gowth",
+				"Ko, Jiunn-Liang"
+			],
+			"doi": "10.1016/j.procbio.2010.06.006",
+			"pmid": "",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"EGFR",
+				"PI3K/Akt",
+				"metastasis",
+				"GMI"
+			],
+			"aliases": [
+				"EGF",
+				"Rac1",
+				"Cdc42",
+				"A549",
+				"invasion",
+				"cell migration"
+			],
+			"evidence": "",
+			"model": "",
+			"summaryZh": "",
+			"keyFinding": "",
+			"sourceUrl": "https://doi.org/10.1016/j.procbio.2010.06.006",
+			"gmibioUrl": "https://www.gmibio.com/research/detail/12#list",
+			"newsUrl": ""
+		}
+	],
+	"patents": [
+		{
+			"id": "PF-GMI-007",
+			"titleZh": "GMI 冠狀病毒感染預防",
+			"titleEn": "Prevention and/or treatment of coronavirus infection",
+			"summaryZh": "專利家族涵蓋 GMI 用於預防及／或治療冠狀病毒感染的相關應用。",
+			"topicGroup": "antiviral infection",
+			"primaryTag": "coronavirus disease",
+			"tags": [
+				"coronavirus disease",
+				"antiviral",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0026",
+					"jurisdiction": "TW",
+					"patentNo": "TWI927137B",
+					"year": 2026,
+					"title": "預防冠狀病毒感染之免疫調節蛋白",
+					"sourceUrl": "https://patents.google.com/patent/TWI927137B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/250#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2026,
+			"yearTo": 2026
+		},
+		{
+			"id": "PF-GMI-009",
+			"titleZh": "GMI 外泌體組成物",
+			"titleEn": "Exosome composition containing GMI and uses thereof",
+			"summaryZh": "專利家族涵蓋含 GMI 之胞外囊泡／外泌體組成物及其相關用途。",
+			"topicGroup": "sequence & process",
+			"primaryTag": "exosome",
+			"tags": [
+				"exosome",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0025",
+					"jurisdiction": "TW",
+					"patentNo": "TWI921862B",
+					"year": 2026,
+					"title": "含有靈芝免疫調節蛋白的外泌體組合物及其用途",
+					"sourceUrl": "https://patents.google.com/patent/TWI921862B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/222#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2026,
+			"yearTo": 2026
+		},
+		{
+			"id": "PF-GMI-008",
+			"titleZh": "GMI 促進幹細胞增殖",
+			"titleEn": "Methods for promoting growth and propagation of stem cells",
+			"summaryZh": "專利家族涵蓋 GMI 用於促進幹細胞生長、增殖與繁殖的相關應用。",
+			"topicGroup": "anti-aging / stem cell propagation",
+			"primaryTag": "stem cell proliferation",
+			"tags": [
+				"stem cell proliferation",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0022",
+					"jurisdiction": "TW",
+					"patentNo": "TWI864278B",
+					"year": 2024,
+					"title": "促進幹細胞增殖與繁殖之方法",
+					"sourceUrl": "https://patents.google.com/patent/TWI864278B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/210#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0023",
+					"jurisdiction": "US",
+					"patentNo": "US12180506B2",
+					"year": 2024,
+					"title": "Methods for promoting growth and propagation of stem cells",
+					"sourceUrl": "https://patents.google.com/patent/US12180506B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/219#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0024",
+					"jurisdiction": "JP",
+					"patentNo": "JP7785496B2",
+					"year": 2025,
+					"title": "Methods for promoting growth and propagation of stem cells",
+					"sourceUrl": "https://patents.google.com/patent/JP7785496B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/124#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2024,
+			"yearTo": 2025
+		},
+		{
+			"id": "PF-GMI-004",
+			"titleZh": "GMI 與 PM2.5 損傷防護",
+			"titleEn": "Reduction of damage caused by fine particulate matter",
+			"summaryZh": "專利家族涵蓋 GMI 用於降低細顆粒物質（PM2.5）所造成損傷的相關應用。",
+			"topicGroup": "immunomodulation/anti-oxidation",
+			"primaryTag": "fine particulate matter",
+			"tags": [
+				"fine particulate matter",
+				"immunomodulation",
+				"antioxidant",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0017",
+					"jurisdiction": "TW",
+					"patentNo": "TWI783135B",
+					"year": 2022,
+					"title": "免疫調節蛋白在減少由細顆粒物質所導致的損傷中的新用途",
+					"sourceUrl": "https://patents.google.com/patent/TWI783135B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/130#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0014",
+					"jurisdiction": "US",
+					"patentNo": "US11077168B2",
+					"year": 2021,
+					"title": "Use of an immunomodulatory protein in reducing damage caused by fine particulate matter",
+					"sourceUrl": "https://patents.google.com/patent/US11077168B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/104#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0018",
+					"jurisdiction": "CN",
+					"patentNo": "CN110354251B",
+					"year": 2024,
+					"title": "免疫调节蛋白在减少由细颗粒物质所导致的损伤中的新用途",
+					"sourceUrl": "https://patents.google.com/patent/CN110354251B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/196#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2021,
+			"yearTo": 2024
+		},
+		{
+			"id": "PF-GMI-005",
+			"titleZh": "GMI 慢性傷口癒合",
+			"titleEn": "Promotion and treatment of chronic wound healing",
+			"summaryZh": "專利家族涵蓋 GMI 於促進及治療慢性傷口癒合的相關應用。",
+			"topicGroup": "wound healing/formulation",
+			"primaryTag": "wound healing",
+			"tags": [
+				"wound healing",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0016",
+					"jurisdiction": "TW",
+					"patentNo": "TWI773927B",
+					"year": 2022,
+					"title": "促進及治療慢性傷口癒合之醫藥組合物及方法",
+					"sourceUrl": "https://patents.google.com/patent/TWI773927B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/129#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0015",
+					"jurisdiction": "US",
+					"patentNo": "US11141458B2",
+					"year": 2021,
+					"title": "Composition and methods for promoting and treating chronic wound healing",
+					"sourceUrl": "https://patents.google.com/patent/US11141458B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/105#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0019",
+					"jurisdiction": "CN",
+					"patentNo": "CN112316108B",
+					"year": 2024,
+					"title": "促进及治疗慢性伤口愈合的组合物和方法",
+					"sourceUrl": "https://patents.google.com/patent/CN112316108B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/128#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2021,
+			"yearTo": 2024
+		},
+		{
+			"id": "PF-GMI-006",
+			"titleZh": "GMI 冠狀病毒疾病治療",
+			"titleEn": "Alleviation and/or treatment of coronavirus diseases",
+			"summaryZh": "專利家族涵蓋 GMI 用於減緩及／或治療冠狀病毒疾病的相關應用。",
+			"topicGroup": "antiviral infection",
+			"primaryTag": "coronavirus disease",
+			"tags": [
+				"coronavirus disease",
+				"antiviral",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0020",
+					"jurisdiction": "TW",
+					"patentNo": "TWI859701B",
+					"year": 2024,
+					"title": "用於減緩及/或治療冠狀病毒疾病之免疫調節蛋白",
+					"sourceUrl": "https://patents.google.com/patent/TWI859701B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/209#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0021",
+					"jurisdiction": "US",
+					"patentNo": "US12122809B2",
+					"year": 2024,
+					"title": "An immunomodulatory protein for alleviation and/or treatment of coronavirus diseases",
+					"sourceUrl": "https://patents.google.com/patent/US12122809B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/211#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2024,
+			"yearTo": 2024
+		},
+		{
+			"id": "PAT-0012",
+			"titleZh": "抗 GMI 單株抗體與應用",
+			"titleEn": "",
+			"summaryZh": "專利涵蓋針對蕈類免疫調節蛋白之單株抗體及其相關應用。",
+			"topicGroup": "sequence & process",
+			"primaryTag": "monoclonal antibody",
+			"tags": [
+				"monoclonal antibody",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0012",
+					"jurisdiction": "CN",
+					"patentNo": "CN107287166B",
+					"year": 2021,
+					"title": "抗蕈類免疫調節蛋白之單株抗體及其應用",
+					"sourceUrl": "https://patents.google.com/patent/CN107287166B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/66#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2021,
+			"yearTo": 2021
+		},
+		{
+			"id": "PF-GMI-002",
+			"titleZh": "GMI 促進神經突生長",
+			"titleEn": "Promotion of neurite outgrowth",
+			"summaryZh": "專利家族涵蓋 GMI 用於促進神經突生長及神經再生相關應用。",
+			"topicGroup": "neural regeneration",
+			"primaryTag": "neural regeneration",
+			"tags": [
+				"neural regeneration",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0011",
+					"jurisdiction": "TW",
+					"patentNo": "TWI723000B",
+					"year": 2021,
+					"title": "靈芝免疫調節蛋白於促進神經突生長之新用途",
+					"sourceUrl": "https://patents.google.com/patent/TWI723000B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/64#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0009",
+					"jurisdiction": "US",
+					"patentNo": "US9975931B2",
+					"year": 2018,
+					"title": "Use of an immunomodulatory protein from Ganoderma in promoting neurite outgrowth",
+					"sourceUrl": "https://patents.google.com/patent/US9975931B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/62#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2018,
+			"yearTo": 2021
+		},
+		{
+			"id": "PF-GMI-003",
+			"titleZh": "GMI 抗纖維化應用",
+			"titleEn": "Inhibition of fibrosis",
+			"summaryZh": "專利家族涵蓋 GMI 用於抑制纖維化的相關應用。",
+			"topicGroup": "anti-fibrosis",
+			"primaryTag": "anti-fibrosis",
+			"tags": [
+				"anti-fibrosis",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0010",
+					"jurisdiction": "TW",
+					"patentNo": "TWI670066B",
+					"year": 2019,
+					"title": "靈芝之免疫調節蛋白於抑制纖維化之用途",
+					"sourceUrl": "https://patents.google.com/patent/TWI670066B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/63#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0013",
+					"jurisdiction": "US",
+					"patentNo": "US11058746B2",
+					"year": 2021,
+					"title": "Use of immunomodulatory protein from Ganoderma in inhibiting fibrosis",
+					"sourceUrl": "https://patents.google.com/patent/US11058746B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/65#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2019,
+			"yearTo": 2021
+		},
+		{
+			"id": "PAT-0008",
+			"titleZh": "GMI 抑制癌幹細胞",
+			"titleEn": "Use of immunomodulatory protein from Ganoderma in inhibiting cancer stem cells",
+			"summaryZh": "專利涵蓋 GMI 用於抑制癌幹細胞的相關用途。",
+			"topicGroup": "anti-cancer",
+			"primaryTag": "cancer stem cells",
+			"tags": [
+				"cancer",
+				"cancer stem cells",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0008",
+					"jurisdiction": "US",
+					"patentNo": "US9937226B2",
+					"year": 2018,
+					"title": "Use of immunomodulatory protein from Ganoderma in inhibiting cancer stem cells",
+					"sourceUrl": "https://patents.google.com/patent/US9937226B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/61#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2018,
+			"yearTo": 2018
+		},
+		{
+			"id": "PAT-0007",
+			"titleZh": "GMI 難治／復發肺癌應用",
+			"titleEn": "Method for treating a refractory or relapsed lung cancer",
+			"summaryZh": "專利涵蓋 GMI 於難治性或復發性肺癌相關用途。",
+			"topicGroup": "anti-cancer",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0007",
+					"jurisdiction": "US",
+					"patentNo": "US9827288B2",
+					"year": 2017,
+					"title": "Method for treating a refractory or relapsed lung cancer",
+					"sourceUrl": "https://patents.google.com/patent/US9827288B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/60#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2017,
+			"yearTo": 2017
+		},
+		{
+			"id": "PAT-0005",
+			"titleZh": "GMI 乳癌應用",
+			"titleEn": "Uses of an immunomodulatory protein (GMI) from Ganoderma microsporum — 乳癌",
+			"summaryZh": "專利涵蓋 GMI 於乳癌相關用途。",
+			"topicGroup": "anti-cancer",
+			"primaryTag": "breast cancer",
+			"tags": [
+				"cancer",
+				"breast cancer",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0005",
+					"jurisdiction": "US",
+					"patentNo": "US9018171B2",
+					"year": 2015,
+					"title": "Uses of an immunomodulatory protein (GMI) from Ganoderma microsporum — 乳癌",
+					"sourceUrl": "https://patents.google.com/patent/US9018171B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/58#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2015,
+			"yearTo": 2015
+		},
+		{
+			"id": "PAT-0006",
+			"titleZh": "GMI 多癌別應用（US）",
+			"titleEn": "Uses of an immunomodulatory protein (GMI) from Ganoderma microsporum — 肺癌、直腸癌、乳癌、肝癌、結腸癌",
+			"summaryZh": "專利涵蓋 GMI 於肺癌、乳癌、肝癌及大腸直腸癌等相關用途。",
+			"topicGroup": "anti-cancer",
+			"primaryTag": "cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"breast cancer",
+				"liver cancer",
+				"colorectal cancer",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0006",
+					"jurisdiction": "US",
+					"patentNo": "US9161964B2",
+					"year": 2015,
+					"title": "Uses of an immunomodulatory protein (GMI) from Ganoderma microsporum — 肺癌、直腸癌、乳癌、肝癌、結腸癌",
+					"sourceUrl": "https://patents.google.com/patent/US9161964B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/59#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2015,
+			"yearTo": 2015
+		},
+		{
+			"id": "PAT-0003",
+			"titleZh": "GMI 肺癌應用",
+			"titleEn": "Uses of an immunomodulatory protein (GMI) from Ganoderma microsporum — 肺癌",
+			"summaryZh": "專利涵蓋 GMI 於肺癌相關用途。",
+			"topicGroup": "anti-cancer",
+			"primaryTag": "lung cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0003",
+					"jurisdiction": "US",
+					"patentNo": "US8476238B2",
+					"year": 2013,
+					"title": "Uses of an immunomodulatory protein (GMI) from Ganoderma microsporum — 肺癌",
+					"sourceUrl": "https://patents.google.com/patent/US8476238B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/56#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2013,
+			"yearTo": 2013
+		},
+		{
+			"id": "PAT-0004",
+			"titleZh": "GMI 多癌別應用（TW）",
+			"titleEn": "",
+			"summaryZh": "專利涵蓋 GMI 於肺癌、頭頸癌、乳癌、膀胱癌、腦癌、肝癌及大腸癌等相關用途。",
+			"topicGroup": "anti-cancer",
+			"primaryTag": "cancer",
+			"tags": [
+				"cancer",
+				"lung cancer",
+				"head and neck cancer",
+				"breast cancer",
+				"bladder cancer",
+				"brain cancer",
+				"liver cancer",
+				"colorectal cancer",
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0004",
+					"jurisdiction": "TW",
+					"patentNo": "TWI414307B",
+					"year": 2013,
+					"title": "小孢子靈芝免疫調節蛋白(GMI)之新用途 — 肺癌、頭頸鱗狀細胞癌、乳癌、膀胱癌、腦癌、肝癌、大腸癌",
+					"sourceUrl": "https://patents.google.com/patent/TWI414307B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/57#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2013,
+			"yearTo": 2013
+		},
+		{
+			"id": "PF-GMI-001",
+			"titleZh": "GMI 免疫調節蛋白序列與選殖",
+			"titleEn": "Immunomodulatory protein cloned from Ganoderma microsporum",
+			"summaryZh": "專利家族涵蓋自小孢子靈芝取得之 GMI 免疫調節蛋白及其相關技術。",
+			"topicGroup": "sequence & process",
+			"primaryTag": "GMI",
+			"tags": [
+				"GMI"
+			],
+			"members": [
+				{
+					"id": "PAT-0001",
+					"jurisdiction": "TW",
+					"patentNo": "TWI299735B",
+					"year": 2008,
+					"title": "由小孢子靈芝選殖之免疫調節蛋白質",
+					"sourceUrl": "https://patents.google.com/patent/TWI299735B",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/54#list",
+					"newsUrl": ""
+				},
+				{
+					"id": "PAT-0002",
+					"jurisdiction": "US",
+					"patentNo": "US7601808B2",
+					"year": 2008,
+					"title": "An immunomodulatory protein cloned from Ganoderma microsporum",
+					"sourceUrl": "https://patents.google.com/patent/US7601808B2",
+					"gmibioUrl": "https://www.gmibio.com/research/detail/55#list",
+					"newsUrl": ""
+				}
+			],
+			"yearFrom": 2008,
+			"yearTo": 2008
+		}
+	]
+}

@@ -1,35 +1,145 @@
 ---
 import Base from '../../layouts/Base.astro';
-const topics = [
-	{ zh: '癌症', en: 'Cancer' },
-	{ zh: '感染症（病毒、細菌）', en: 'Infection (viral, bacterial)' },
-	{ zh: '環境壓力因子', en: 'Environmental stressors' },
-	{ zh: '代謝', en: 'Metabolism' },
-	{ zh: '神經', en: 'Neuro' },
-	{ zh: '肌肉與肌少症', en: 'Muscle & sarcopenia' },
-];
+import { TOPICS } from '../../data/gmi-topics';
+import { byTopic, displayTags, firstAuthor, GMI, journalTopic, patentTopic, searchText, tagZh } from '../../lib/gmi';
+
+const groups = byTopic();
+const rows = [
+	...GMI.journals.map((j) => ({
+		kind: 'journal' as const,
+		id: j.id,
+		year: j.year,
+		topic: journalTopic(j),
+		title: j.title,
+		sub: `${firstAuthor(j)}${firstAuthor(j) ? '．' : ''}${j.journal}`,
+		tags: displayTags(j.tags),
+		href: j.sourceUrl,
+		gmibio: j.gmibioUrl,
+		search: searchText([j.title, j.journal, j.aliases, j.authors.slice(0, 3), j.summaryZh], j.tags, journalTopic(j)),
+	})),
+	...GMI.patents.map((p) => ({
+		kind: 'patent' as const,
+		id: p.id,
+		year: p.yearTo,
+		topic: patentTopic(p),
+		title: p.titleZh,
+		sub: p.members.map((m) => `${m.jurisdiction} ${m.patentNo}`).join('、'),
+		tags: displayTags(p.tags),
+		href: p.members[0]?.sourceUrl,
+		gmibio: p.members[0]?.gmibioUrl,
+		search: searchText([p.titleZh, p.titleEn, p.summaryZh, p.members.map((m) => m.patentNo)], p.tags, patentTopic(p)),
+	})),
+].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 ---
 
 <Base
 	title="GMI 研究資料 / GMI Research References"
-	description="GMI（Ganoderma microsporum immunomodulatory protein）已公開的研究文獻與專利，依主題分類，附證據等級。"
+	description={`GMI（Ganoderma microsporum immunomodulatory protein）已公開的研究文獻 ${GMI.counts.journals} 篇與專利家族 ${GMI.counts.patentFamilies} 族，依主題分類，附原始出處。`}
 >
 	<h1>GMI 研究資料 <span class="muted small">/ Research References</span></h1>
 	<p>
-		本頁收錄已公開發表的 GMI（<i>Ganoderma microsporum</i> immunomodulatory protein）研究文獻與專利，依主題分類，每筆標示證據等級。日本專利保留原文標題並附中英譯。
+		本頁整理已公開發表的 GMI（<i>Ganoderma microsporum</i> immunomodulatory protein，小孢子靈芝免疫調節蛋白）研究文獻與已核准專利，依主題分類。每筆都附原始出處（期刊 DOI／Google Patents）。
 	</p>
-	<p class="muted">
-		This page lists <em>published</em> literature and patents on GMI, grouped by topic, each tagged with its evidence level. Japanese patents keep their original titles with Chinese and English translations.
+	<p class="muted small">
+		Published literature and granted patents on GMI, grouped by topic, each linked to its primary source. Titles are shown in their original language.
+	</p>
+	<p class="muted small">
+		目前收錄：文獻 {GMI.counts.journals} 篇、專利家族 {GMI.counts.patentFamilies} 族（{GMI.counts.patents} 件核准）。資料更新：{GMI.generatedAt}。申請中的專利不列入。
 	</p>
 
-	<h2>主題 / Topics</h2>
-	<ul>
-		{topics.map((t) => (
-			<li>
-				{t.zh} <span class="muted small">/ {t.en}</span>
+	<h2>依主題瀏覽 <span class="muted small">/ Browse by topic</span></h2>
+	<ul class="topics">
+		{groups.map(({ topic, journals, patents }) => (
+			<li class="topic-card">
+				<a href={`/gmi/${topic.slug}/`}>
+					<strong>{topic.zh}</strong>
+					<span class="topic-en">{topic.en}</span>
+					<span class="topic-count">文獻 {journals.length}．專利 {patents.length}</span>
+					<span class="topic-blurb">{topic.blurb}</span>
+				</a>
 			</li>
 		))}
 	</ul>
 
-	<aside class="notice">資料整理中，將分批上線。<br />References are being compiled and will be published in batches.</aside>
+	<h2 id="all">篩選總表 <span class="muted small">/ Filter all</span></h2>
+	<form class="filters" id="filters">
+		<input type="search" name="q" placeholder="搜尋：肺癌、PM2.5、EGFR、專利號…" aria-label="搜尋" />
+		<select name="kind" aria-label="類型">
+			<option value="">全部類型</option>
+			<option value="journal">文獻</option>
+			<option value="patent">專利</option>
+		</select>
+		<select name="topic" aria-label="主題">
+			<option value="">全部主題</option>
+			{TOPICS.map((t) => (
+				<option value={t.slug}>{t.zh}</option>
+			))}
+		</select>
+		<span class="muted small" id="filter-count"></span>
+	</form>
+
+	<div class="table-wrap">
+		<table class="reftable" id="reftable">
+			<thead>
+				<tr>
+					<th>類型</th>
+					<th>年份</th>
+					<th>主題</th>
+					<th>標題</th>
+					<th>連結</th>
+				</tr>
+			</thead>
+			<tbody>
+				{rows.map((r) => (
+					<tr data-kind={r.kind} data-topic={r.topic.slug} data-search={r.search}>
+						<td class="inline" data-label="類型">
+							<span class={`ref-type${r.kind === 'patent' ? ' patent' : ''}`}>{r.kind === 'patent' ? '專利' : '文獻'}</span>
+						</td>
+						<td class="inline" data-label="年份">{r.year ?? '—'}</td>
+						<td class="inline" data-label="主題">
+							<a href={`/gmi/${r.topic.slug}/`}>{r.topic.zh}</a>
+						</td>
+						<td data-label="標題">
+							<a href={`/gmi/${r.topic.slug}/#${r.id}`}>{r.title}</a>
+							<div class="muted small">{r.sub}</div>
+							{r.tags.length > 0 && <div class="small muted">{r.tags.map(tagZh).join('．')}</div>}
+						</td>
+						<td data-label="連結" class="nowrap">
+							<a href={r.href} rel="noopener" target="_blank">原文</a>
+							{r.gmibio && (
+								<a href={r.gmibio} rel="noopener" target="_blank">
+									GMIBIO
+								</a>
+							)}
+						</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+
+	<script>
+		const form = document.getElementById('filters') as HTMLFormElement;
+		const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('#reftable tbody tr'));
+		const count = document.getElementById('filter-count')!;
+		const apply = () => {
+			const q = (form.elements.namedItem('q') as HTMLInputElement).value.trim().toLowerCase();
+			const kind = (form.elements.namedItem('kind') as HTMLSelectElement).value;
+			const topic = (form.elements.namedItem('topic') as HTMLSelectElement).value;
+			const terms = q.split(/\s+/).filter(Boolean);
+			let n = 0;
+			for (const r of rows) {
+				const ok =
+					(!kind || r.dataset.kind === kind) &&
+					(!topic || r.dataset.topic === topic) &&
+					terms.every((t) => (r.dataset.search ?? '').includes(t));
+				r.hidden = !ok;
+				if (ok) n++;
+			}
+			count.textContent = `${n} / ${rows.length} 筆`;
+		};
+		form.addEventListener('submit', (e) => e.preventDefault());
+		form.addEventListener('input', apply);
+		apply();
+	</script>
 </Base>

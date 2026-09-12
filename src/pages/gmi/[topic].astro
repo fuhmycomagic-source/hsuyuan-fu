@@ -1,0 +1,60 @@
+---
+import JournalCard from '../../components/JournalCard.astro';
+import PatentFamilyCard from '../../components/PatentFamilyCard.astro';
+import Base from '../../layouts/Base.astro';
+import { TOPICS } from '../../data/gmi-topics';
+import { byTopic } from '../../lib/gmi';
+
+export function getStaticPaths() {
+	return byTopic().map((g) => ({ params: { topic: g.topic.slug }, props: g }));
+}
+const { topic, journals, patents } = Astro.props;
+const i = TOPICS.findIndex((t) => t.slug === topic.slug);
+const prev = TOPICS[i - 1];
+const next = TOPICS[i + 1];
+---
+
+<Base
+	title={`${topic.zh} / ${topic.en} — GMI 研究資料`}
+	description={`GMI 在「${topic.zh}」主題的研究文獻 ${journals.length} 篇與專利家族 ${patents.length} 族。${topic.blurb}`}
+>
+	<p class="crumbs small"><a href="/gmi/">GMI 研究資料</a> ›</p>
+	<h1>{topic.zh} <span class="muted small">/ {topic.en}</span></h1>
+	<p class="muted">{topic.blurb}</p>
+
+	<h2>研究文獻 <span class="muted small">/ Literature（{journals.length}）</span></h2>
+	{
+		journals.length ? (
+			<ul class="refs">
+				{journals.map((j) => (
+					<JournalCard j={j} />
+				))}
+			</ul>
+		) : (
+			<p class="muted">此主題目前沒有已收錄的文獻。</p>
+		)
+	}
+
+	<h2>已核准專利 <span class="muted small">/ Granted patents（{patents.length}）</span></h2>
+	{
+		patents.length ? (
+			<ul class="refs">
+				{patents.map((p) => (
+					<PatentFamilyCard p={p} />
+				))}
+			</ul>
+		) : (
+			<p class="muted">此主題目前沒有已核准的專利。</p>
+		)
+	}
+
+	<nav class="pager">
+		{prev ? <a href={`/gmi/${prev.slug}/`}>‹ {prev.zh}</a> : <span />}
+		<a href="/gmi/#all">篩選總表</a>
+		{next ? <a href={`/gmi/${next.slug}/`}>{next.zh} ›</a> : <span />}
+	</nav>
+
+	<aside class="notice">
+		本頁僅整理已公開的文獻與已核准專利，並附原始出處；證據等級與中文摘要將分批補上。內容為個人整理，不構成醫療建議或療效宣稱。
+	</aside>
+</Base>
