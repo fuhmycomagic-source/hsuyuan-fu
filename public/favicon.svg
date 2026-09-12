@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#8b3a2f"/><text x="32" y="44" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="34" font-weight="700" fill="#faf7f2" text-anchor="middle">煦</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- GMI 四聚體（依 PDB 3KCW 次單元排列，D2 對稱）：2×2 β-sandwich，中央為交換的 N 端 α-helix -->
+  <rect width="64" height="64" rx="14" fill="#767593"/>
+  <rect x="11" y="11" width="19" height="19" rx="6" fill="#faf7f2"/>
+  <rect x="34" y="11" width="19" height="19" rx="6" fill="#faf7f2" opacity="0.72"/>
+  <rect x="11" y="34" width="19" height="19" rx="6" fill="#faf7f2" opacity="0.72"/>
+  <rect x="34" y="34" width="19" height="19" rx="6" fill="#faf7f2"/>
+  <g stroke="#767593" stroke-width="3.5" stroke-linecap="round">
+    <path d="M20 20 L44 44"/><path d="M44 20 L20 44"/>
+  </g>
+  <g stroke="#d6d5e4" stroke-width="2" stroke-linecap="round">
+    <path d="M20 20 L44 44"/><path d="M44 20 L20 44"/>
+  </g>
+</svg>
