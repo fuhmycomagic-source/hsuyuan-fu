@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Timeline from '../components/Timeline.astro';
 import { DISCLOSURE, SITE_NAME, SITE_NAME_EN } from '../consts';
+import { PERSON } from '../data/entities';
+import { profilePageGraph } from '../lib/schema';
 import {
 	CERTIFICATIONS,
 	GMI_MILESTONES,
@@ -18,6 +20,7 @@ const certs = [...CERTIFICATIONS].sort((a, b) => b.year - a.year);
 <Base
 	title="關於我 / About"
 	description="傅煦媛（Hsu-Yuan Fu）：生化科技博士，十餘年把 GMI（小孢子靈芝免疫調節蛋白）從學術研發帶到食品、化粧品與藥品法規登錄的產業化歷程。"
+	schema={profilePageGraph()}
 >
 	<h1>關於我 <span class="muted small">/ About</span></h1>
 
@@ -71,6 +74,13 @@ const certs = [...CERTIFICATIONS].sort((a, b) => b.year - a.year);
 		Academic and industry tracks on one shared axis (side by side on wide screens). Expand each entry for English.
 	</p>
 	<Timeline entries={TIMELINE} />
+
+	<h2>學術身分 <span class="muted small">/ Academic profiles</span></h2>
+	<ul class="profiles">
+		<li><a href={PERSON.orcid} rel="me noopener" target="_blank">ORCID</a> <span class="muted small">0000-0002-5327-2208</span></li>
+		<li><a href={PERSON.sameAs[1]} rel="me noopener" target="_blank">Google Scholar</a></li>
+		<li><a href={PERSON.sameAs[2]} rel="me noopener" target="_blank">LinkedIn</a></li>
+	</ul>
 
 	<h2>專業認證 <span class="muted small">/ Certifications</span></h2>
 	<ul class="certs">
@@ -201,6 +211,15 @@ const certs = [...CERTIFICATIONS].sort((a, b) => b.year - a.year);
 		}
 	}
 
+	.profiles {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.25rem;
+		font-size: 0.95rem;
+	}
 	.certs {
 		list-style: none;
 		margin: 0;

@@ -1,0 +1,10 @@
+---
+// 輸出 schema.org JSON-LD。nodes 由 src/lib/schema.ts 的 *Graph() 產生。
+import { toJsonLd, type Node } from '../lib/schema';
+interface Props {
+	nodes: Node[];
+}
+const { nodes } = Astro.props;
+---
+
+<script type="application/ld+json" set:html={toJsonLd(nodes)} />

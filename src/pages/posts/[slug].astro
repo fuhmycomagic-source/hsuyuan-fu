@@ -1,9 +1,13 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import References from '../../components/References.astro';
 import Base from '../../layouts/Base.astro';
-import { DEFAULT_HERO, DISCLOSURE } from '../../consts';
-import { lastUpdated } from '../../lib/dates';
+import { AUTHOR, DEFAULT_HERO, DISCLOSURE, SITE_NAME } from '../../consts';
+import { SITE_URL } from '../../data/entities';
+import { fmt, lastUpdated } from '../../lib/dates';
+import { orderRefs } from '../../lib/refs';
+import { articleGraph } from '../../lib/schema';
 
 export async function getStaticPaths() {
 	const articles = await getCollection('articles');
@@ -14,10 +18,16 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'articles'>;
 
 const article = Astro.props;
-const { Content } = await render(article);
-const { title, description, author, pubDate, evidence, tags, heroImage } = article.data;
+const { Content, remarkPluginFrontmatter } = await render(article);
+const { title, description, author, pubDate, evidence, tags, heroImage, takeaways, about, references, faq } = article.data;
 const updated = lastUpdated(article);
 const wasUpdated = updated.valueOf() !== pubDate.valueOf();
+const path = `/posts/${article.id}/`;
+const url = `${SITE_URL}${path}`;
+
+// 參考文獻：依內文 [@key] 出現順序（由 cite-plugin 寫入 citeOrder）
+const refs = orderRefs(references, (remarkPluginFrontmatter.citeOrder as string[] | undefined) ?? []);
+const wordCount = (article.body ?? '').replace(/\s+/g, '').length;
 
 // 未指定圖片時使用網站預設主視覺
 const hero = heroImage
@@ -37,14 +47,32 @@ const hero = heroImage
 			credit: `${DEFAULT_HERO.title} — ${DEFAULT_HERO.author}, ${DEFAULT_HERO.license}, via Wikimedia Commons`,
 			creditUrl: DEFAULT_HERO.sourceUrl,
 		};
+
+const schema = articleGraph({
+	path,
+	title,
+	description,
+	image: hero.src,
+	datePublished: pubDate,
+	dateModified: updated,
+	keywords: tags,
+	evidence,
+	about,
+	references: refs,
+	faq,
+	wordCount,
+});
+
+const citeText = `${AUTHOR}（${updated.getUTCFullYear()}）。${title}。${SITE_NAME}。${url}（${fmt(updated)} 版）`;
 ---
 
-<Base {title} {description} image={hero.src} type="article">
+<Base {title} {description} image={hero.src} type="article" {schema}>
 	<article data-count-view={article.id}>
+		<p class="crumbs small"><a href="/">首頁</a> › <a href="/posts/">文章</a> ›</p>
 		<header>
 			<h1>{title}</h1>
 			<div class="meta">
-				<span>作者：{author}</span>
+				<span>作者：<a href="/about/" rel="author">{author}</a></span>
 				<FormattedDate date={pubDate} label="發布" />
 				{wasUpdated && <FormattedDate date={updated} label="更新" />}
 				<span class="views" data-views={article.id}>–</span>
@@ -66,13 +94,98 @@ const hero = heroImage
 			)}
 		</figure>
 
+		{takeaways.length > 0 && (
+			<aside class="takeaways" aria-labelledby="tk-h">
+				<h2 id="tk-h">重點摘要</h2>
+				<ul>
+					{takeaways.map((t) => <li>{t}</li>)}
+				</ul>
+			</aside>
+		)}
+
 		<div class="prose">
 			<Content />
 		</div>
+
+		{faq.length > 0 && (
+			<section class="faq" aria-labelledby="faq-h">
+				<h2 id="faq-h">常見問題</h2>
+				{faq.map((f) => (
+					<details>
+						<summary>{f.q}</summary>
+						<p>{f.a}</p>
+					</details>
+				))}
+			</section>
+		)}
+
+		<References {refs} />
 
 		<aside class="notice">
 			<strong>利益揭露與聲明</strong><br />
 			{DISCLOSURE}
 		</aside>
+
+		<section class="cite-this">
+			<h2>引用本文</h2>
+			<p>{citeText}</p>
+		</section>
 	</article>
 </Base>
+
+<style>
+	.takeaways {
+		background: var(--bg-card);
+		border: 1px solid var(--line);
+		border-left: 4px solid var(--accent);
+		border-radius: 10px;
+		padding: 0.9rem 1.1rem;
+		margin: 1.5rem 0;
+	}
+	.takeaways h2 {
+		font-size: 0.95rem;
+		margin: 0 0 0.5rem;
+		color: var(--link);
+	}
+	.takeaways ul {
+		margin: 0;
+		padding-left: 1.2rem;
+		display: grid;
+		gap: 0.35rem;
+		font-size: 0.95rem;
+	}
+	.faq {
+		margin-top: 2.5rem;
+	}
+	.faq h2 {
+		font-size: 1.1rem;
+	}
+	.faq details {
+		border-top: 1px solid var(--line);
+		padding: 0.6rem 0;
+	}
+	.faq details:last-of-type {
+		border-bottom: 1px solid var(--line);
+	}
+	.faq summary {
+		cursor: pointer;
+		font-weight: 600;
+	}
+	.faq p {
+		margin: 0.5rem 0 0;
+		color: var(--muted);
+	}
+	.cite-this {
+		margin-top: 1.5rem;
+		font-size: 0.85rem;
+		color: var(--muted);
+	}
+	.cite-this h2 {
+		font-size: 0.9rem;
+		margin: 0 0 0.25rem;
+	}
+	.cite-this p {
+		margin: 0;
+		user-select: all;
+	}
+</style>

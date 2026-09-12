@@ -14,7 +14,11 @@
 | `src/consts.ts` | 網站名稱、標語、利益揭露文字、預設主視覺與出處 |
 | `public/images/` | 圖片 |
 | `functions/api/` | 瀏覽計數 API（Cloudflare Pages Functions，資料存 KV） |
-| `scripts/` | 新增文章、自動更新日期的小工具 |
+| `src/data/entities.ts` | 兩個核心 entity：傅煦媛（Person）與 GMI（Protein）的名稱、別名、外部識別碼（ORCID、Wikidata、UniProt…） |
+| `src/lib/schema.ts` | JSON-LD 結構化資料產生器（每頁一個 @graph） |
+| `src/lib/refs.ts`、`src/lib/cite-plugin.mjs` | 參考文獻系統：frontmatter `references` + 內文 `[@key]` |
+| `src/data/refs-cache.json` | Crossref／PubMed 抓回的書目快取（`npm run refs` 產生，要 commit） |
+| `scripts/` | 新增文章、自動更新日期、抓書目、匯入 GMI 資料的小工具 |
 
 ## 新增文章
 
@@ -24,7 +28,28 @@ npm run new-post -- my-slug "文章標題"
 
 會建立 `src/content/articles/my-slug.md`，填好 frontmatter 後直接寫 Markdown。
 
-Frontmatter 欄位：`title`、`description`、`author`（預設 傅煦媛）、`pubDate`、`updatedDate`（自動）、`evidence`（證據等級：細胞實驗 / 動物實驗 / 人體試驗 / 個案軼事 / 推測假說）、`tags`、`heroImage`（可選，未填用網站預設圖）、`draft`。
+Frontmatter 欄位：、（直接給答案的一兩句，AI 摘要常抽這裡）、（預設 傅煦媛）、、（自動）、（證據等級：細胞實驗 / 動物實驗 / 人體試驗 / 個案軼事 / 推測假說）、、（GMI 之外的主題 entity）、（重點摘要 3–5 句）、、、（可選）、。
+
+### 引用文獻
+
+1. 在 frontmatter 的  列出來源，只要  加一個識別碼：
+   \2. 內文寫  或 ，建置時變成上標 [1]、[1,2]，連到文末「參考文獻」。編號依內文第一次出現的順序。
+3. 執行 ：向 Crossref 抓標題、作者、期刊、卷期頁，向 NCBI 抓 PMID／PMCID，存進 （記得 commit）。已快取的不會重抓；> hsuyuan-fu@0.1.0 refs
+> node scripts/fetch-refs.mjs --force
+DOI 共 41 筆，需抓取 0 筆
+完成：0/0 筆，快取共 41 筆 → src/data/refs-cache.json 全部重抓。
+4. 文末清單每筆附 DOI、PubMed、全文（PMC）連結；GMI 文獻另附站內資料頁連結。書目缺漏時畫面會標「書目待補」。
+
+### SEO／AI 結構化資料
+
+每頁自動輸出 schema.org JSON-LD（）：
+- 全站共用三個固定節點：、（傅煦媛，含 ORCID、Google Scholar、學歷、認證）、（GMI，含 Wikidata、UniProt、PDB、GenBank、INCI）。
+- 文章： + →Person、→GMI、→每筆 （DOI）、（有 faq 時）、。
+- GMI 資料頁：， 為 41 篇  與專利節點。
+- 關於我：，→Person。
+- 另有 、（給 AI 爬蟲的網站說明，建置時自動列出所有文章與主題頁）。
+
+改人物或 GMI 的資料（新增身分連結、識別碼）只需改 。
 
 ## 日期自動更新
 

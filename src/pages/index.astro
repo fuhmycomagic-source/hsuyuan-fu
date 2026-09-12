@@ -4,12 +4,13 @@ import ArticleCard from '../components/ArticleCard.astro';
 import Base from '../layouts/Base.astro';
 import { DEFAULT_HERO, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_TITLE } from '../consts';
 import { sortByUpdated } from '../lib/dates';
+import { homeGraph } from '../lib/schema';
 
 // 文章列表在建置時直接輸出成 HTML（非瀏覽器端 JS 產生），依最後更新日期排序、最新在前
 const articles = sortByUpdated((await getCollection('articles')).filter((a) => !a.data.draft));
 ---
 
-<Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Base title={SITE_TITLE} description={SITE_DESCRIPTION} schema={homeGraph()}>
 	<section class="hero">
 		<img
 			src={DEFAULT_HERO.src}

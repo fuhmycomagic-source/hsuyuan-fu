@@ -596,3 +596,17 @@ h3 {
 		margin-right: 0.8rem;
 	}
 }
+
+/* 內文引用上標 [1] → 文末參考文獻 */
+sup.cite {
+	font-size: 0.7em;
+	line-height: 0;
+	margin-left: 0.1em;
+}
+sup.cite a {
+	text-decoration: none;
+	color: var(--link);
+}
+sup.cite a:hover {
+	text-decoration: underline;
+}

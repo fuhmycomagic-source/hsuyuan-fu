@@ -2,7 +2,9 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import JsonLd from '../components/JsonLd.astro';
 import ViewsScript from '../components/ViewsScript.astro';
+import type { Node } from '../lib/schema';
 
 interface Props {
 	title: string;
@@ -10,14 +12,17 @@ interface Props {
 	image?: string;
 	type?: 'website' | 'article';
 	lang?: string;
+	/** schema.org JSON-LD 節點（見 src/lib/schema.ts） */
+	schema?: Node[];
 }
-const { title, description, image, type, lang = 'zh-Hant-TW' } = Astro.props;
+const { title, description, image, type, lang = 'zh-Hant-TW', schema } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
 	<head>
 		<BaseHead {title} {description} {image} {type} />
+		{schema && <JsonLd nodes={schema} />}
 	</head>
 	<body>
 		<Header />

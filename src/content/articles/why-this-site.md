@@ -3,12 +3,23 @@ title: '為什麼我開始寫這個網站'
 description: '一個在 GMI 研發第一線工作的研究者，為什麼決定用個人網站做科學轉譯，以及這裡的每篇文章會怎麼標示證據。'
 author: 傅煦媛
 pubDate: 2026-09-12
+updatedDate: 2026-09-12
 evidence: []
 tags: ['網站', 'GMI']
+about: ['科學轉譯', '證據等級']
+takeaways:
+  - 這個網站把 GMI 的學術研究，轉譯成關心健康或科研的人讀得懂的內容。
+  - 每篇文章與每筆資料都標示證據等級：細胞實驗、動物實驗、人體試驗、個案軼事、推測假說。
+  - 作者在 GMI 研發第一線工作，每篇文章底部都有利益揭露。
+references:
+  - key: teo2020
+    gmi: JRN-0024
+  - key: lin2024
+    gmi: JRN-0008
 draft: false
 ---
 
-GMI 的全名是 *Ganoderma microsporum* immunomodulatory protein，小孢子靈芝免疫調節蛋白。它是一個從靈芝屬真菌分離出來的小分子蛋白，過去十多年累積了不少學術文獻，主題橫跨癌症、感染症、環境壓力因子、代謝與神經。
+GMI 的全名是 *Ganoderma microsporum* immunomodulatory protein，小孢子靈芝免疫調節蛋白。它是一個從靈芝屬真菌分離出來的小分子蛋白，過去十多年累積了不少學術文獻，主題橫跨癌症、感染症、環境壓力因子、代謝與神經，近年也延伸到肌肉與肌少症[@teo2020; @lin2024]。
 
 但除了學術圈，很少人聽過它。
 

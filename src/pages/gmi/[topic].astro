@@ -4,6 +4,8 @@ import PatentFamilyCard from '../../components/PatentFamilyCard.astro';
 import Base from '../../layouts/Base.astro';
 import { TOPICS } from '../../data/gmi-topics';
 import { byTopic } from '../../lib/gmi';
+import { resolveRef } from '../../lib/refs';
+import { gmiCollectionGraph } from '../../lib/schema';
 
 export function getStaticPaths() {
 	return byTopic().map((g) => ({ params: { topic: g.topic.slug }, props: g }));
@@ -12,11 +14,24 @@ const { topic, journals, patents } = Astro.props;
 const i = TOPICS.findIndex((t) => t.slug === topic.slug);
 const prev = TOPICS[i - 1];
 const next = TOPICS[i + 1];
+const description = `GMI 在「${topic.zh}」主題的研究文獻 ${journals.length} 篇與專利家族 ${patents.length} 族。${topic.blurb}`;
+const schema = gmiCollectionGraph({
+	path: `/gmi/${topic.slug}/`,
+	name: `${topic.zh} / ${topic.en} — GMI 研究資料`,
+	description,
+	refs: [...journals.map((j) => resolveRef({ key: j.id, gmi: j.id })), ...patents.map((p) => resolveRef({ key: p.id, gmi: p.id }))],
+	crumbs: [
+		{ name: '首頁', path: '/' },
+		{ name: 'GMI 研究資料', path: '/gmi/' },
+		{ name: topic.zh, path: `/gmi/${topic.slug}/` },
+	],
+});
 ---
 
 <Base
 	title={`${topic.zh} / ${topic.en} — GMI 研究資料`}
-	description={`GMI 在「${topic.zh}」主題的研究文獻 ${journals.length} 篇與專利家族 ${patents.length} 族。${topic.blurb}`}
+	{description}
+	{schema}
 >
 	<p class="crumbs small"><a href="/gmi/">GMI 研究資料</a> ›</p>
 	<h1>{topic.zh} <span class="muted small">/ {topic.en}</span></h1>

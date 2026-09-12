@@ -1,0 +1,134 @@
+---
+// 文末參考文獻清單（編號制）。順序 = 內文第一次引用的順序；未被引用的列在最後。
+// 每筆：作者．標題．期刊 年;卷(期):頁．連結（DOI／PubMed／站內 GMI 資料頁）
+import { fmtAuthors, type ResolvedRef } from '../lib/refs';
+interface Props {
+	refs: ResolvedRef[];
+}
+const { refs } = Astro.props;
+---
+
+{
+	refs.length > 0 && (
+		<section class="references" aria-labelledby="refs-h">
+			<h2 id="refs-h">參考文獻</h2>
+			<ol>
+				{refs.map((r, i) => (
+					<li id={`ref-${r.key}`} class:list={{ gmi: r.gmi, incomplete: r.incomplete }}>
+						<span class="ref-n">{i + 1}.</span>
+						<span class="ref-body">
+							{r.authors.length > 0 && <span class="ref-authors">{fmtAuthors(r.authors).replace(/\.$/, '')}. </span>}
+							<span class="ref-t">{r.title.replace(/[.。]$/, '')}.</span>
+							{r.kind === 'article' && r.journal && (
+								<span class="ref-src">
+									{' '}
+									<i>{r.journal}</i>
+									{r.year && ` ${r.year}`}
+									{r.volume && `;${r.volume}`}
+									{r.issue && `(${r.issue})`}
+									{r.pages && `:${r.pages}`}.
+								</span>
+							)}
+							{r.kind === 'patent' && (
+								<span class="ref-src">
+									{' '}
+									專利 {r.id}
+									{r.year && `（${r.year}）`}.
+								</span>
+							)}
+							{r.kind === 'web' && (
+								<span class="ref-src">
+									{' '}
+									{r.publisher && `${r.publisher}. `}
+									{r.year && `${r.year}. `}
+								</span>
+							)}
+							{r.note && <span class="ref-note">（{r.note}）</span>}
+							<span class="ref-links">
+								{r.doi && (
+									<a href={`https://doi.org/${r.doi}`} rel="noopener" target="_blank">
+										DOI
+									</a>
+								)}
+								{r.pmid && (
+									<a href={`https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/`} rel="noopener" target="_blank">
+										PubMed
+									</a>
+								)}
+								{r.pmcid && (
+									<a href={`https://pmc.ncbi.nlm.nih.gov/articles/${r.pmcid}/`} rel="noopener" target="_blank">
+										全文
+									</a>
+								)}
+								{!r.doi && r.url && (
+									<a href={r.url} rel="noopener" target="_blank">
+										{r.kind === 'patent' ? 'Google Patents' : '連結'}
+									</a>
+								)}
+								{r.gmiHref && <a href={r.gmiHref}>GMI 資料頁</a>}
+							</span>
+						</span>
+					</li>
+				))}
+			</ol>
+		</section>
+	)
+}
+
+<style>
+	.references {
+		margin-top: 2.5rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--line);
+		font-size: 0.88rem;
+	}
+	.references h2 {
+		font-size: 1.1rem;
+		margin: 0 0 0.75rem;
+	}
+	.references ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.6rem;
+	}
+	.references li {
+		display: grid;
+		grid-template-columns: 2rem 1fr;
+		gap: 0.25rem;
+		line-height: 1.55;
+		scroll-margin-top: 4rem;
+	}
+	.references li:target {
+		background: var(--bg-card);
+		outline: 2px solid var(--accent);
+		outline-offset: 4px;
+		border-radius: 4px;
+	}
+	.ref-n {
+		color: var(--muted);
+		font-variant-numeric: tabular-nums;
+	}
+	.ref-t {
+		font-weight: 600;
+	}
+	.ref-note {
+		color: var(--muted);
+	}
+	.ref-links {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		margin-left: 0.5rem;
+	}
+	.ref-links a {
+		font-size: 0.8rem;
+		white-space: nowrap;
+	}
+	.incomplete .ref-t::after {
+		content: '（書目待補：npm run refs）';
+		color: #b00;
+		font-weight: 400;
+	}
+</style>

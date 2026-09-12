@@ -2,6 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import { TOPICS } from '../../data/gmi-topics';
 import { byTopic, displayTags, firstAuthor, GMI, journalTopic, patentTopic, searchText, tagZh } from '../../lib/gmi';
+import { GMI_ENTITY } from '../../data/entities';
+import { resolveRef } from '../../lib/refs';
+import { gmiCollectionGraph } from '../../lib/schema';
 
 const groups = byTopic();
 const rows = [
@@ -30,11 +33,24 @@ const rows = [
 		search: searchText([p.titleZh, p.titleEn, p.summaryZh, p.members.map((m) => m.patentNo)], p.tags, patentTopic(p)),
 	})),
 ].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+
+const description = `GMI（Ganoderma microsporum immunomodulatory protein）已公開的研究文獻 ${GMI.counts.journals} 篇與專利家族 ${GMI.counts.patentFamilies} 族，依主題分類，附原始出處。`;
+const schema = gmiCollectionGraph({
+	path: '/gmi/',
+	name: 'GMI 研究資料 / GMI Research References',
+	description,
+	refs: [...GMI.journals.map((j) => resolveRef({ key: j.id, gmi: j.id })), ...GMI.patents.map((p) => resolveRef({ key: p.id, gmi: p.id }))],
+	crumbs: [
+		{ name: '首頁', path: '/' },
+		{ name: 'GMI 研究資料', path: '/gmi/' },
+	],
+});
 ---
 
 <Base
 	title="GMI 研究資料 / GMI Research References"
-	description={`GMI（Ganoderma microsporum immunomodulatory protein）已公開的研究文獻 ${GMI.counts.journals} 篇與專利家族 ${GMI.counts.patentFamilies} 族，依主題分類，附原始出處。`}
+	{description}
+	{schema}
 >
 	<h1>GMI 研究資料 <span class="muted small">/ Research References</span></h1>
 	<p>
@@ -42,6 +58,9 @@ const rows = [
 	</p>
 	<p class="muted small">
 		Published literature and granted patents on GMI, grouped by topic, each linked to its primary source. Titles are shown in their original language.
+	</p>
+	<p class="muted small">
+		識別碼 / Identifiers：{GMI_ENTITY.identifiers.map((i, k) => (<span>{k > 0 && ' · '}{i.url ? <a href={i.url} rel="noopener" target="_blank">{i.name} {i.value}</a> : `${i.name}: ${i.value}`}</span>))} · <a href={GMI_ENTITY.sameAs[1]} rel="noopener" target="_blank">維基百科</a>
 	</p>
 	<p class="muted small">
 		目前收錄：文獻 {GMI.counts.journals} 篇、專利家族 {GMI.counts.patentFamilies} 族（{GMI.counts.patents} 件核准）。資料更新：{GMI.generatedAt}。申請中的專利不列入。

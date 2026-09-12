@@ -27,6 +27,29 @@ const articles = defineCollection({
 				creditUrl: z.string().optional(),
 			})
 			.optional(),
+		// 文章開頭的「重點摘要」：3–5 句，每句直接給答案（AI 摘要與讀者都先看這裡）
+		takeaways: z.array(z.string()).default([]),
+		// 文章主題（GMI 之外的 entity 名稱，例如 '肌少症'、'GLP-1 受體促效劑'）
+		about: z.array(z.string()).default([]),
+		// 參考文獻：內文用 [@key] 引用。只需 key + doi / gmi / url，其餘由 npm run refs 補齊
+		references: z
+			.array(
+				z.object({
+					key: z.string().regex(/^[A-Za-z0-9_.:-]+$/, 'key 只能用英數、_ . : -'),
+					doi: z.string().optional(),
+					gmi: z.string().optional(),
+					url: z.string().optional(),
+					title: z.string().optional(),
+					authors: z.array(z.string()).optional(),
+					year: z.number().optional(),
+					journal: z.string().optional(),
+					publisher: z.string().optional(),
+					note: z.string().optional(),
+				}),
+			)
+			.default([]),
+		// 常見問答：渲染在文末，並輸出 FAQPage 結構化資料
+		faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
 		draft: z.boolean().default(false),
 	}),
 });
