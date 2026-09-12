@@ -17,8 +17,8 @@ export const isMechanism = (tag: string): boolean => MECHANISM_TAG_TYPES.has(tag
 export const displayTags = (tags: string[]) => tags.filter((t) => t !== 'GMI' && !isMechanism(t));
 export const mechanismTags = (tags: string[]) => tags.filter(isMechanism);
 
-export const journalTopic = (j: Journal): Topic => topicFor(j.primaryTag, j.tags);
-export const patentTopic = (p: PatentFamily): Topic => topicFor(p.primaryTag, p.tags);
+export const journalTopic = (j: Journal): Topic => topicFor(j.id, j.primaryTag, j.tags, j.evidence);
+export const patentTopic = (p: PatentFamily): Topic => topicFor(p.id, p.primaryTag, p.tags);
 
 export function byTopic() {
 	return TOPICS.map((topic) => ({

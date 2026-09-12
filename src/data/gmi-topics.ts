@@ -10,6 +10,13 @@ export interface Topic {
 
 export const TOPICS: Topic[] = [
 	{
+		slug: 'clinical',
+		zh: '人體臨床研究',
+		en: 'Clinical studies',
+		blurb: '以人為受試者的臨床研究（前瞻性試驗、先導研究）。證據等級最高，單獨列出。',
+		tags: [],
+	},
+	{
 		slug: 'cancer',
 		zh: '癌症',
 		en: 'Cancer',
@@ -67,7 +74,7 @@ export const TOPICS: Topic[] = [
 		zh: '平台技術與安全性',
 		en: 'Platform & safety',
 		blurb: 'GMI 序列與選殖、單株抗體、外泌體組成物、安全性評估。',
-		tags: ['GMI', 'monoclonal antibody', 'exosome', 'safety', 'autophagy'],
+		tags: ['GMI', 'monoclonal antibody', 'exosome', 'safety'],
 	},
 ];
 
@@ -77,7 +84,17 @@ export const MECHANISM_TAG_TYPES = new Set(['Mechanism']);
 // 泛用標籤（免疫調節、抗發炎等）只在沒有更具體的主題時才使用
 const GENERIC = new Set(['GMI', 'immunomodulation', 'anti-inflammatory', 'antioxidant', 'cancer', 'drug resistance', 'metastasis']);
 
-export function topicFor(primaryTag: string, tags: string[]): Topic {
+// 個別紀錄的主題指定（資料本身標籤不足以判斷時使用；Excel 補齊標籤後可移除）
+export const OVERRIDES: Record<string, string> = {
+	'JRN-0011': 'clinical', // 乳癌患者 Reishimmune-S 先導研究
+	'JRN-0020': 'clinical', // 頭頸癌患者化療口腔黏膜炎前瞻性研究
+	'JRN-0038': 'cancer', // 肺癌細胞自噬機制；自噬只是機制標籤
+};
+
+export function topicFor(id: string, primaryTag: string, tags: string[], evidence = ''): Topic {
+	const bySlug = (slug: string) => TOPICS.find((t) => t.slug === slug);
+	if (OVERRIDES[id]) return bySlug(OVERRIDES[id])!;
+	if (evidence === '人體試驗') return bySlug('clinical')!;
 	if (!GENERIC.has(primaryTag)) {
 		const hit = TOPICS.find((t) => t.tags.includes(primaryTag));
 		if (hit) return hit;
