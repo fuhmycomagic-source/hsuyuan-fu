@@ -1,4 +1,19 @@
 {
+	"10.1001/jama.2024.6586": {
+		"title": "Is Weight Loss–Induced Muscle Mass Loss Clinically Relevant?",
+		"authors": [
+			"Conte, Caterina",
+			"Hall, Kevin D.",
+			"Klein, Samuel"
+		],
+		"journal": "JAMA",
+		"year": 2024,
+		"volume": "332",
+		"issue": "1",
+		"pages": "9",
+		"type": "journal-article",
+		"fetchedAt": "2026-09-12"
+	},
 	"10.1002/ddr.70202": {
 		"title": "rFIP‐GMI Suppresses IGF‐1–Induced Invasion and Migration in Breast Cancer Cells via PI3K/Akt/β‐Catenin Inhibition",
 		"authors": [
@@ -298,6 +313,45 @@
 		"type": "journal-article",
 		"fetchedAt": "2026-09-12"
 	},
+	"10.1016/j.jamda.2019.12.012": {
+		"title": "Asian Working Group for Sarcopenia: 2019 Consensus Update on Sarcopenia Diagnosis and Treatment",
+		"authors": [
+			"Chen, Liang-Kung",
+			"Woo, Jean",
+			"Assantachai, Prasert",
+			"Auyeung, Tung-Wai",
+			"Chou, Ming-Yueh",
+			"Iijima, Katsuya",
+			"Jang, Hak Chul",
+			"Kang, Lin",
+			"Kim, Miji",
+			"Kim, Sunyoung",
+			"Kojima, Taro",
+			"Kuzuya, Masafumi",
+			"Lee, Jenny S.W.",
+			"Lee, Sang Yoon",
+			"Lee, Wei-Ju",
+			"Lee, Yunhwan",
+			"Liang, Chih-Kuang",
+			"Lim, Jae-Young",
+			"Lim, Wee Shiong",
+			"Peng, Li-Ning",
+			"Sugimoto, Ken",
+			"Tanaka, Tomoki",
+			"Won, Chang Won",
+			"Yamada, Minoru",
+			"Zhang, Teimei",
+			"Akishita, Masahiro",
+			"Arai, Hidenori"
+		],
+		"journal": "Journal of the American Medical Directors Association",
+		"year": 2020,
+		"volume": "21",
+		"issue": "3",
+		"pages": "300-307.e2",
+		"type": "journal-article",
+		"fetchedAt": "2026-09-12"
+	},
 	"10.1016/j.lfs.2023.122255": {
 		"title": "GMI, a Ganoderma microsporum protein, abolishes focal adhesion network to reduce cell migration and metastasis of lung cancer",
 		"authors": [
@@ -425,6 +479,22 @@
 		"pmcid": "PMC9742912",
 		"fetchedAt": "2026-09-12"
 	},
+	"10.1016/s2213-8587(24)00272-9": {
+		"title": "Muscle matters: the effects of medically induced weight loss on skeletal muscle",
+		"authors": [
+			"Prado, Carla M",
+			"Phillips, Stuart M",
+			"Gonzalez, M Cristina",
+			"Heymsfield, Steven B"
+		],
+		"journal": "The Lancet Diabetes &amp; Endocrinology",
+		"year": 2024,
+		"volume": "12",
+		"issue": "11",
+		"pages": "785-787",
+		"type": "journal-article",
+		"fetchedAt": "2026-09-12"
+	},
 	"10.1021/jf103068w": {
 		"title": "GMI, a Ganoderma Immunomodulatory Protein, Down-regulates Tumor Necrosis Factor α-Induced Expression of Matrix Metalloproteinase 9 via NF-κB Pathway in Human Alveolar Epithelial A549 Cells",
 		"authors": [
@@ -462,6 +532,24 @@
 		"issue": "5",
 		"pages": "1534-1543",
 		"type": "journal-article",
+		"fetchedAt": "2026-09-12"
+	},
+	"10.1038/s41366-026-02118-y": {
+		"title": "Effect of GLP-1 receptor agonists at doses for obesity management on muscle health: systematic review and meta-analysis of randomized controlled trials (RCTs)",
+		"authors": [
+			"Laverde, Ligia Patricia",
+			"Muñoz-Velandia, Oscar Mauricio",
+			"Alfonso, Diana",
+			"Gómez Medina, Ana María"
+		],
+		"journal": "International Journal of Obesity",
+		"year": 2026,
+		"volume": "50",
+		"issue": "8",
+		"pages": "1638-1646",
+		"type": "journal-article",
+		"pmid": 42321502,
+		"pmcid": "PMC13461373",
 		"fetchedAt": "2026-09-12"
 	},
 	"10.1038/s41416-020-0885-8": {
@@ -506,6 +594,99 @@
 		"pmcid": "PMC6497649",
 		"fetchedAt": "2026-09-12"
 	},
+	"10.1056/nejmoa2032183": {
+		"title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity",
+		"authors": [
+			"Wilding, John P.H.",
+			"Batterham, Rachel L.",
+			"Calanna, Salvatore",
+			"Davies, Melanie",
+			"Van Gaal, Luc F.",
+			"Lingvay, Ildiko",
+			"McGowan, Barbara M.",
+			"Rosenstock, Julio",
+			"Tran, Marie T.D.",
+			"Wadden, Thomas A.",
+			"Wharton, Sean",
+			"Yokote, Koutaro",
+			"Zeuthen, Niels",
+			"Kushner, Robert F."
+		],
+		"journal": "New England Journal of Medicine",
+		"year": 2021,
+		"volume": "384",
+		"issue": "11",
+		"pages": "989-1002",
+		"type": "journal-article",
+		"fetchedAt": "2026-09-12"
+	},
+	"10.1056/nejmoa2206038": {
+		"title": "Tirzepatide Once Weekly for the Treatment of Obesity",
+		"authors": [
+			"Jastreboff, Ania M.",
+			"Aronne, Louis J.",
+			"Ahmad, Nadia N.",
+			"Wharton, Sean",
+			"Connery, Lisa",
+			"Alves, Breno",
+			"Kiyosue, Arihiro",
+			"Zhang, Shuyu",
+			"Liu, Bing",
+			"Bunck, Mathijs C.",
+			"Stefanski, Adam"
+		],
+		"journal": "New England Journal of Medicine",
+		"year": 2022,
+		"volume": "387",
+		"issue": "3",
+		"pages": "205-216",
+		"type": "journal-article",
+		"fetchedAt": "2026-09-12"
+	},
+	"10.1093/ageing/afy169": {
+		"title": "Sarcopenia: revised European consensus on definition and diagnosis",
+		"authors": [
+			"Cruz-Jentoft, Alfonso J",
+			"Bahat, Gülistan",
+			"Bauer, Jürgen",
+			"Boirie, Yves",
+			"Bruyère, Olivier",
+			"Cederholm, Tommy",
+			"Cooper, Cyrus",
+			"Landi, Francesco",
+			"Rolland, Yves",
+			"Sayer, Avan Aihie",
+			"Schneider, Stéphane M",
+			"Sieber, Cornel C",
+			"Topinkova, Eva",
+			"Vandewoude, Maurits",
+			"Visser, Marjolein",
+			"Zamboni, Mauro",
+			"Writing Group for the European Working Group on Sarcopenia in Older People 2 (EWGSOP2), and the Extended Group for EWGSOP2",
+			"Bautmans, Ivan",
+			"Baeyens, Jean-Pierre",
+			"Cesari, Matteo",
+			"Cherubini, Antonio",
+			"Kanis, John",
+			"Maggio, Marcello",
+			"Martin, Finbarr",
+			"Michel, Jean-Pierre",
+			"Pitkala, Kaisu",
+			"Reginster, Jean-Yves",
+			"Rizzoli, René",
+			"Sánchez-Rodríguez, Dolores",
+			"Schols, Jos"
+		],
+		"journal": "Age and Ageing",
+		"year": 2018,
+		"volume": "48",
+		"issue": "1",
+		"pages": "16-31",
+		"type": "journal-article",
+		"pmid": 30312372,
+		"pmcid": "PMC6322506",
+		"fetchedAt": "2026-09-12"
+	},
 	"10.1097/md.0000000000029185": {
 		"title": "Efficacy of GMI, a fungal immunomodulatory protein, for head and neck cancer patients with chemotherapy-related oral mucositis",
 		"authors": [
@@ -543,6 +724,50 @@
 		"volume": "137",
 		"issue": "6",
 		"pages": "e70143",
+		"type": "journal-article",
+		"fetchedAt": "2026-09-12"
+	},
+	"10.1111/dom.14725": {
+		"title": "Weight regain and cardiometabolic effects after withdrawal of semaglutide: The STEP 1 trial extension",
+		"authors": [
+			"Wilding, John P. H.",
+			"Batterham, Rachel L.",
+			"Davies, Melanie",
+			"Van Gaal, Luc F.",
+			"Kandler, Kristian",
+			"Konakli, Katerina",
+			"Lingvay, Ildiko",
+			"McGowan, Barbara M.",
+			"Oral, Tugce Kalayci",
+			"Rosenstock, Julio",
+			"Wadden, Thomas A.",
+			"Wharton, Sean",
+			"Yokote, Koutaro",
+			"Kushner, Robert F.",
+			"STEP 1 Study Group"
+		],
+		"journal": "Diabetes, Obesity and Metabolism",
+		"year": 2022,
+		"volume": "24",
+		"issue": "8",
+		"pages": "1553-1564",
+		"type": "journal-article",
+		"pmid": 35441470,
+		"pmcid": "PMC9542252",
+		"fetchedAt": "2026-09-12"
+	},
+	"10.1111/dom.15728": {
+		"title": "Changes in lean body mass with glucagon‐like peptide ‐1‐based therapies and mitigation strategies",
+		"authors": [
+			"Neeland, Ian J.",
+			"Linge, Jennifer",
+			"Birkenfeld, Andreas L."
+		],
+		"journal": "Diabetes, Obesity and Metabolism",
+		"year": 2024,
+		"volume": "26",
+		"issue": "S4",
+		"pages": "16-27",
 		"type": "journal-article",
 		"fetchedAt": "2026-09-12"
 	},
