@@ -1,0 +1,37 @@
+---
+// 瀏覽計數：文章頁 POST 一次（+1），列表頁 GET 批次讀取。
+// 後端為 functions/api/views*，資料存在 Cloudflare KV。
+---
+
+<script>
+	const nodes = Array.from(document.querySelectorAll<HTMLElement>('[data-views]'));
+	if (nodes.length) {
+		const fmt = (n: number) => n.toLocaleString('zh-TW');
+		const article = document.querySelector<HTMLElement>('[data-count-view]');
+		if (article) {
+			// 文章頁：計數 +1
+			const slug = article.dataset.countView!;
+			fetch(`/api/views/${slug}`, { method: 'POST' })
+				.then((r) => (r.ok ? r.json() : null))
+				.then((d: { views?: number } | null) => {
+					if (d && typeof d.views === 'number') {
+						nodes.forEach((n) => (n.textContent = fmt(d.views!)));
+					}
+				})
+				.catch(() => {});
+		} else {
+			// 列表頁：一次讀取所有卡片的計數
+			const slugs = [...new Set(nodes.map((n) => n.dataset.views!))];
+			fetch(`/api/views?slugs=${encodeURIComponent(slugs.join(','))}`)
+				.then((r) => (r.ok ? r.json() : null))
+				.then((d: Record<string, number> | null) => {
+					if (!d) return;
+					nodes.forEach((n) => {
+						const v = d[n.dataset.views!];
+						if (typeof v === 'number') n.textContent = fmt(v);
+					});
+				})
+				.catch(() => {});
+		}
+	}
+</script>

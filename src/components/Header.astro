@@ -1,0 +1,24 @@
+---
+import { SITE_NAME, SITE_NAME_EN } from '../consts';
+const path = Astro.url.pathname;
+const links = [
+	{ href: '/', label: '首頁' },
+	{ href: '/posts/', label: '文章' },
+	{ href: '/gmi/', label: 'GMI 研究資料' },
+	{ href: '/about/', label: '關於我' },
+];
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="site-header">
+	<div class="wrap">
+		<a class="brand" href="/">{SITE_NAME}<span>{SITE_NAME_EN}</span></a>
+		<nav class="nav" aria-label="主選單">
+			{links.map((l) => (
+				<a href={l.href} aria-current={isActive(l.href) ? 'page' : undefined}>
+					{l.label}
+				</a>
+			))}
+		</nav>
+	</div>
+</header>

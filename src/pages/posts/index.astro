@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleCard from '../../components/ArticleCard.astro';
+import Base from '../../layouts/Base.astro';
+import { sortByUpdated } from '../../lib/dates';
+
+const articles = sortByUpdated((await getCollection('articles')).filter((a) => !a.data.draft));
+---
+
+<Base title="文章" description="所有文章，依最後更新日期排序。">
+	<h1>文章</h1>
+	<p class="muted">共 {articles.length} 篇，依最後更新日期排序。</p>
+	<ul class="cards">
+		{articles.map((a) => <ArticleCard article={a} />)}
+	</ul>
+</Base>

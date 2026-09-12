@@ -1,0 +1,3 @@
+#!/bin/sh
+# 自動更新文章的 updatedDate / pubDate（見 scripts/stamp-updated.mjs）
+node scripts/stamp-updated.mjs

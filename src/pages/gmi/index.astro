@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+const topics = [
+	{ zh: '癌症', en: 'Cancer' },
+	{ zh: '感染症（病毒、細菌）', en: 'Infection (viral, bacterial)' },
+	{ zh: '環境壓力因子', en: 'Environmental stressors' },
+	{ zh: '代謝', en: 'Metabolism' },
+	{ zh: '神經', en: 'Neuro' },
+	{ zh: '肌肉與肌少症', en: 'Muscle & sarcopenia' },
+];
+---
+
+<Base
+	title="GMI 研究資料 / GMI Research References"
+	description="GMI（Ganoderma microsporum immunomodulatory protein）已公開的研究文獻與專利，依主題分類，附證據等級。"
+>
+	<h1>GMI 研究資料 <span class="muted small">/ Research References</span></h1>
+	<p>
+		本頁收錄已公開發表的 GMI（<i>Ganoderma microsporum</i> immunomodulatory protein）研究文獻與專利，依主題分類，每筆標示證據等級。日本專利保留原文標題並附中英譯。
+	</p>
+	<p class="muted">
+		This page lists <em>published</em> literature and patents on GMI, grouped by topic, each tagged with its evidence level. Japanese patents keep their original titles with Chinese and English translations.
+	</p>
+
+	<h2>主題 / Topics</h2>
+	<ul>
+		{topics.map((t) => (
+			<li>
+				{t.zh} <span class="muted small">/ {t.en}</span>
+			</li>
+		))}
+	</ul>
+
+	<aside class="notice">資料整理中，將分批上線。<br />References are being compiled and will be published in batches.</aside>
+</Base>

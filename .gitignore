@@ -1,5 +1,17 @@
-node_modules/
-.wrangler/
-.dev.vars
+# build output
 dist/
+# generated types
+.astro/
+# dependencies
+node_modules/
+# logs
+npm-debug.log*
+# environment
 .env
+.env.production
+.dev.vars
+# wrangler local state
+.wrangler/
+# OS / editor
+.DS_Store
+.idea/

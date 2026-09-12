@@ -1,0 +1,16 @@
+---
+import { AUTHOR, DEFAULT_HERO, DISCLOSURE } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<div class="wrap">
+		<p>© {year} {AUTHOR}．{DISCLOSURE}</p>
+		<p>
+			主視覺照片：<a href={DEFAULT_HERO.sourceUrl} rel="noopener" target="_blank">「{DEFAULT_HERO.title}」</a>
+			by {DEFAULT_HERO.author}，
+			<a href={DEFAULT_HERO.licenseUrl} rel="license noopener" target="_blank">{DEFAULT_HERO.license}</a>，
+			via Wikimedia Commons。
+		</p>
+	</div>
+</footer>

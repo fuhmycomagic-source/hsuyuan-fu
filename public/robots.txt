@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://hsuyuan-fu.pages.dev/sitemap-index.xml

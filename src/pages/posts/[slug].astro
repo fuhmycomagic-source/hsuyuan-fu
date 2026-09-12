@@ -1,0 +1,78 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Base from '../../layouts/Base.astro';
+import { DEFAULT_HERO, DISCLOSURE } from '../../consts';
+import { lastUpdated } from '../../lib/dates';
+
+export async function getStaticPaths() {
+	const articles = await getCollection('articles');
+	return articles
+		.filter((a) => !a.data.draft)
+		.map((a) => ({ params: { slug: a.id }, props: a }));
+}
+type Props = CollectionEntry<'articles'>;
+
+const article = Astro.props;
+const { Content } = await render(article);
+const { title, description, author, pubDate, evidence, tags, heroImage } = article.data;
+const updated = lastUpdated(article);
+const wasUpdated = updated.valueOf() !== pubDate.valueOf();
+
+// 未指定圖片時使用網站預設主視覺
+const hero = heroImage
+	? {
+			src: heroImage.src,
+			alt: heroImage.alt,
+			width: heroImage.width,
+			height: heroImage.height,
+			credit: heroImage.credit,
+			creditUrl: heroImage.creditUrl,
+		}
+	: {
+			src: DEFAULT_HERO.src,
+			alt: DEFAULT_HERO.alt,
+			width: DEFAULT_HERO.width,
+			height: DEFAULT_HERO.height,
+			credit: `${DEFAULT_HERO.title} — ${DEFAULT_HERO.author}, ${DEFAULT_HERO.license}, via Wikimedia Commons`,
+			creditUrl: DEFAULT_HERO.sourceUrl,
+		};
+---
+
+<Base {title} {description} image={hero.src} type="article">
+	<article data-count-view={article.id}>
+		<header>
+			<h1>{title}</h1>
+			<div class="meta">
+				<span>作者：{author}</span>
+				<FormattedDate date={pubDate} label="發布" />
+				{wasUpdated && <FormattedDate date={updated} label="更新" />}
+				<span class="views" data-views={article.id}>–</span>
+			</div>
+			{(evidence.length > 0 || tags.length > 0) && (
+				<ul class="tags">
+					{evidence.map((e) => <li class="tag evidence">證據等級：{e}</li>)}
+					{tags.map((t) => <li class="tag">{t}</li>)}
+				</ul>
+			)}
+		</header>
+
+		<figure class="article-hero">
+			<img src={hero.src} alt={hero.alt} width={hero.width} height={hero.height} />
+			{hero.credit && (
+				<figcaption>
+					圖片：{hero.creditUrl ? <a href={hero.creditUrl} rel="noopener" target="_blank">{hero.credit}</a> : hero.credit}
+				</figcaption>
+			)}
+		</figure>
+
+		<div class="prose">
+			<Content />
+		</div>
+
+		<aside class="notice">
+			<strong>利益揭露與聲明</strong><br />
+			{DISCLOSURE}
+		</aside>
+	</article>
+</Base>

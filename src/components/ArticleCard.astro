@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { lastUpdated } from '../lib/dates';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+	article: CollectionEntry<'articles'>;
+	headingLevel?: 'h2' | 'h3';
+}
+const { article, headingLevel = 'h2' } = Astro.props;
+const H = headingLevel;
+const { title, description, author, pubDate, evidence, tags } = article.data;
+const updated = lastUpdated(article);
+const wasUpdated = updated.valueOf() !== pubDate.valueOf();
+const href = `/posts/${article.id}/`;
+---
+
+<li class="card">
+	<H><a href={href}>{title}</a></H>
+	<p>{description}</p>
+	<div class="meta">
+		<span>{author}</span>
+		<FormattedDate date={pubDate} label="發布" />
+		{wasUpdated && <FormattedDate date={updated} label="更新" />}
+		<span class="views" data-views={article.id}>–</span>
+	</div>
+	{(evidence.length > 0 || tags.length > 0) && (
+		<ul class="tags">
+			{evidence.map((e) => <li class="tag evidence">{e}</li>)}
+			{tags.map((t) => <li class="tag">{t}</li>)}
+		</ul>
+	)}
+</li>

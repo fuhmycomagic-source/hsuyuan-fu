@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleCard from '../components/ArticleCard.astro';
+import Base from '../layouts/Base.astro';
+import { DEFAULT_HERO, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_TITLE } from '../consts';
+import { sortByUpdated } from '../lib/dates';
+
+// 文章列表在建置時直接輸出成 HTML（非瀏覽器端 JS 產生），依最後更新日期排序、最新在前
+const articles = sortByUpdated((await getCollection('articles')).filter((a) => !a.data.draft));
+---
+
+<Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<section class="hero">
+		<img
+			src={DEFAULT_HERO.src}
+			width={DEFAULT_HERO.width}
+			height={DEFAULT_HERO.height}
+			alt={DEFAULT_HERO.alt}
+			fetchpriority="high"
+		/>
+		<div class="overlay">
+			<h1>{SITE_NAME}</h1>
+			<p>{SITE_TAGLINE}</p>
+		</div>
+	</section>
+
+	<p class="muted" style="margin-top:0">
+		從健康與科研議題出發，連結到 GMI（<i>Ganoderma microsporum</i> immunomodulatory
+		protein，小孢子靈芝免疫調節蛋白）的研究與應用想法。每篇文章與每筆資料都標示證據等級。
+	</p>
+
+	<h2 style="margin-top:1.5rem">最新文章</h2>
+	{
+		articles.length ? (
+			<ul class="cards">
+				{articles.map((a) => (
+					<ArticleCard article={a} />
+				))}
+			</ul>
+		) : (
+			<p class="muted">文章整理中。</p>
+		)
+	}
+</Base>

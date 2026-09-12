@@ -1,0 +1,10 @@
+---
+import { fmt } from '../lib/dates';
+interface Props {
+	date: Date;
+	label?: string;
+}
+const { date, label } = Astro.props;
+---
+
+<time datetime={date.toISOString()}>{label && `${label} `}{fmt(date)}</time>

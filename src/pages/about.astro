@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { DISCLOSURE, SITE_NAME, SITE_NAME_EN } from '../consts';
+---
+
+<Base title="關於我 / About" description="傅煦媛（Hsu-Yuan Fu）：從博士研究到 GMI 研發，以及為什麼寫這個網站。">
+	<h1>關於我 <span class="muted small">/ About</span></h1>
+
+	<h2>{SITE_NAME}</h2>
+	<p>
+		研究者，目前從事 GMI（小孢子靈芝免疫調節蛋白）的研發工作。取得博士學位並完成博士後研究後回到臺灣，十餘年間歷經不同的專業領域與職務轉換。這個網站是我把工作上讀到的科學研究，轉譯成健康與科研議題的個人筆記。
+	</p>
+
+	<h2>{SITE_NAME_EN}</h2>
+	<p class="muted">
+		Researcher working on GMI (<i>Ganoderma microsporum</i> immunomodulatory protein) R&amp;D. After a PhD and postdoctoral research abroad, I returned to Taiwan, where my career has crossed several professional fields over the past decade and more. This site is where I translate the science I read at work into personal notes on health and research topics.
+	</p>
+
+	<h2>經歷 <span class="muted small">/ Timeline</span></h2>
+	<p class="muted">學術與職涯雙軌時間軸整理中。<br />A dual-track (academic / career) timeline is in preparation.</p>
+
+	<aside class="notice">
+		<strong>利益揭露 / Disclosure</strong><br />
+		{DISCLOSURE}<br />
+		<span class="muted">I work in GMI ingredient R&amp;D. Everything here is my personal view and scientific summary, not my employer's position, not advertising, and not medical advice.</span>
+	</aside>
+</Base>
