@@ -18,7 +18,7 @@ const { refs } = Astro.props;
 						<span class="ref-n">{i + 1}.</span>
 						<span class="ref-body">
 							{r.authors.length > 0 && <span class="ref-authors">{fmtAuthors(r.authors).replace(/\.$/, '')}. </span>}
-							<span class="ref-t">{r.title.replace(/[.。]$/, '')}.</span>
+							<span class="ref-t">{/[.?!。？！]$/.test(r.title) ? r.title : r.title + '.'}</span>
 							{r.kind === 'article' && r.journal && (
 								<span class="ref-src">
 									{' '}

@@ -15,7 +15,19 @@ const normDoi = (d) =>
 		.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '')
 		.replace(/^doi:\s*/i, '')
 		.toLowerCase();
-const stripTags = (s) => String(s ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+// 去 HTML 標籤、還原 &amp; 等實體、把 Unicode 連字號（‐ ‑）換成一般連字號、收斂空白
+const stripTags = (s) =>
+	String(s ?? '')
+		.replace(/<[^>]+>/g, '')
+		.replace(/&amp;/g, '&')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+		.replace(/&quot;/g, '"')
+		.replace(/&#39;|&apos;/g, "'")
+		.replace(/[‐‑]/g, '-')
+		.replace(/\s+-(\d)/g, '-$1')
+		.replace(/\s+/g, ' ')
+		.trim();
 
 // 1. 收集 DOI
 const dois = new Set();
@@ -49,7 +61,7 @@ async function crossref(doi) {
 	return {
 		title: stripTags(m.title?.[0]),
 		authors: (m.author ?? []).map((a) => (a.family ? `${a.family}, ${a.given ?? ''}`.replace(/, $/, '') : a.name ?? '')).filter(Boolean),
-		journal: m['container-title']?.[0] ?? undefined,
+		journal: m['container-title']?.[0] ? stripTags(m['container-title'][0]) : undefined,
 		year: dateParts?.[0],
 		volume: m.volume ?? undefined,
 		issue: m.issue ?? undefined,
